@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gb2312" />
+<meta name="robots" content="all" />
+<meta name="author" content="Tencent-TGideas" />
+<meta name="Copyright" content="Tencent" />
+<meta name="Description" content="《地下城与勇士》DNF下载官方网站。《地下城与勇士》是由腾讯代理引进的一款超人气格斗网游作品，WCG2011年DNF中国区总决赛一起超越格斗极限。" />
+<meta name="Keywords" content="地下城与勇士,DNF,Dungeon&Fighter,DF,D&F,地下城,勇士,名将,三国志,横版,2D,腾讯游戏,免费,ACT,转职,觉醒,冒险家,鬼剑士,格斗,格斗家,神枪手,枪手,圣职,红眼,白手,鬼气,阿修罗,气功师,大枪,漫游,阿拉德,召唤兽,投币,复活币" />
+<!--页面设计：gordanguo | 页面制作：maczhou| 创建：2015-4-21| 团队博客：http://tgideas.qq.com/ -->
+<title>6月1日更新之后客户端闪退问题相关公告-地下城与勇士-DNF-官方网站-腾讯游戏</title>
+<style>
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,p,th,td,s{margin:0;padding:0;font-family:"微软雅黑",Tahoma,sans-serif}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+th,em,b{font-style:normal;font-weight:normal}
+ul,ol,s{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+body{min-width:1000px;padding-top:42px;font-size:12px}
+a{text-decoration:none}
+a:hover{text-decoration:none}
+table{border-collapse:collapse;border-spacing:0;empty-cells:show}
+input,select,form img,button{vertical-align:middle}
+img{border:0}
+.clearfix{overflow:hidden;zoom:1}
+.hid{display:none}
+.sprite-bg{background:url(//ossweb-img.qq.com/images/dnf/web2015/sprite-bg.png?d=201511) no-repeat 0 0}
+.sprite-icon,.ad-icon .on{background:url(http://ossweb-img.qq.com/images/dnf/web2015/sprite-icon.png?d=201511) no-repeat 0 0}
+.guide_bg {background:url(//ossweb-img.qq.com/images/dnf/web2015/guide.jpg) no-repeat;}
+#wrap{background:url(about:blank) no-repeat center 0;min-height:904px;}
+#container{width:1060px;margin:0 auto}
+.content{width:1060px;}
+.icon-more{display:inline-block;width:6px;height:6px;background-position:0 -16px;position:relative;top:-3px;*top:-8px}
+.content{clear:both;position:relative}
+.sider{width:200px;position:absolute;left:0;top:0}
+#main-sider .belong-p,#page-sider .belong-m{display:none;}
+.sider-top{width:214px;height:277px;background-position:0px 0;overflow:hidden;zoom:1;margin:-7px 0 0 -14px}
+.sider-top li{float:left}
+.sider-top a{display:block;height:100%;overflow:hidden;text-indent:-999em}
+.down{width:215px;height:159px;margin:0 0 0 -1px;}
+.regist,.recharge{width:100px;height:49px}
+.regist{margin:0 0 0 14px}
+.props{height:68px;margin:0 0 0 14px;width:200px}
+.user{width:180px;height:205px;background:#383635;margin:30px 0 28px 0; padding:15px 10px 0;color:#696969;}
+.user a{color:#ec4828;}
+#login_qq_span{color:#fff;font-weight:bold;}
+
+#unlogin a {display:block; margin:5px auto 0; width:140px; height:40px; line-height:40px; text-align:center; background:#ec4828; color:#fff; font-size:14px; font-weight:bold;}
+#unlogin p {margin:20px 0 0; line-height:24px; padding:18px 0 0 15px; border-top:1px solid #4c4a4a;}
+#unlogin li {padding:0 0 0 15px;line-height:24px;}
+.user-info{line-height:16px; padding:9px 0 0;}
+.user-info a {display:block; width:110px;}
+.user-info span{margin-right:5px;color:#696969;}
+.user_vip {border-top:1px solid #4c4a4a; margin:10px 0 10px;}
+
+
+.logined_btn {border-top:1px solid #4c4a4a; height:24px; padding-top:5px;}
+.logined_btn li {padding:5px; height:24px; width:80px; float:left;}
+.logined_btn li a {display:block; width:80px; height:24px; line-height:24px; text-align:center; background:#f7f7f7; color:#ec4828;}
+
+.menu-guide{margin:0 0 31px 0;position:relative}
+.menu-guide-tit{overflow:hidden;zoom:1;background-color:#383635;height:232px}
+.menu-guide-tit li{width:100%;float:left;height:58px;line-height:58px;position:relative}
+.menu-guide-tit li a{display:block;height:57px;padding:0 13px;border-bottom:1px solid #4a4847;margin:0 13px}
+.menu-guide-tit .menu-guide-tit-o a{border-bottom:0}
+.menu-guide-tit .cur-line{display:block;width:4px;height:58px;background-color:#ec4828;position:absolute;left:0;top:0;display:none}
+.icon-arrow{display:block;width:4px;height:7px;background-position:0 0;position:absolute;right:25px;top:50%;margin-top:-3px}
+.menu-guide-tit .cur .cur-line{display:block}
+.menu-guide-tit .cur .icon-arrow{background-position:-5px 0}
+.menu-guide-tit .cur a{color:#ec4c2d}
+.menu-guide-tit a{font-size:14px;color:#fff;font-weight:bold;display:block;height:100%}
+.menu-guide-list{overflow:hidden;zoom:1;}
+.guide-panel{background-color:#fff;width:860px;height:230px;background-color:#fff;display:none;position:absolute;left:200px;top:0;z-index:999;border:1px solid #e8e8e8;box-shadow:0px 0px 9px #e8e8e8;border-radius:3px;}
+.menu-guide-list s{display:block;margin:0 auto 5px auto}
+.icon-yxdl{width:40px;height:26px;background-position:-460px 0}
+.s-icon a:hover .icon-yxdl{background-position:-460px -33px}
+.icon-yxjm{width:32px;height:27px;background-position:-501px 0}
+.s-icon a:hover .icon-yxjm{background-position:-501px -33px}
+.icon-xtsz{width:27px;height:27px;background-position:-534px 0}
+.s-icon a:hover .icon-xtsz{background-position:-534px -33px}
+.icon-zyjn{width:28px;height:28px;background-position:-563px 0}
+.s-icon a:hover .icon-zyjn{background-position:-563px -33px}
+.icon-djjy{width:20px;height:32px;background-position:-592px 0}
+.s-icon a:hover .icon-djjy{background-position:-592px -33px}
+.icon-zdxt{width:24px;height:27px;background-position:-613px 0}
+.s-icon a:hover .icon-zdxt{background-position:-613px -33px}
+.icon-rwxt{width:32px;height:22px;background-position:-638px 0}
+.s-icon a:hover .icon-rwxt{background-position:-638px -33px}
+.icon-dxc{width:30px;height:32px;background-position:-671px 0}
+.s-icon a:hover .icon-dxc{background-position:-671px -33px}
+.icon-sqxt{width:26px;height:29px;background-position:-702px 0}
+.s-icon a:hover .icon-sqxt{background-position:-702px -33px}
+.icon-cw{width:26px;height:28px;background-position:-730px 0}
+.s-icon a:hover .icon-cw{background-position:-730px -33px}
+.icon-scjy{width:28px;height:29px;background-position:-759px 0}
+.s-icon a:hover .icon-scjy{background-position:-759px -33px}
+.icon-fzy{width:28px;height:28px;background-position:-788px 0}
+.s-icon a:hover .icon-fzy{background-position:-788px -33px}
+.icon-zb{width:26px;height:26px;background-position:-818px 0}
+.s-icon a:hover .icon-zb{background-position:-818px -33px}
+.icon-sc{width:28px;height:32px;background-position:-845px 0}
+.s-icon a:hover .icon-sc{background-position:-845px -33px}
+.icon-tswf{width:29px;height:29px;background-position:-875px 0}
+.s-icon a:hover .icon-tswf{background-position:-875px -33px}
+.icon-jdc{width:30px;height:28px;background-position:-906px 0}
+.s-icon a:hover .icon-jdc{background-position:-906px -33px}
+.icon-cz{width:38px;height:18px;background-position:-368px -65px}
+.s-icon a:hover .icon-cz{background-position:-368px -100px}
+.icon-tgp{width:31px;height:26px;background-position:-407px -65px}
+.s-icon a:hover .icon-tgp{background-position:-407px -100px}
+.icon-jdmnq{width:28px;height:28px;background-position:-440px -65px}
+.s-icon a:hover .icon-jdmnq{background-position:-440px -100px}
+.icon-tyf{width:42px;height:28px;background-position:-470px -65px}
+.s-icon a:hover .icon-tyf{background-position:-470px -100px}
+.icon-bzcxq{width:28px;height:28px;background-position:-514px -65px}
+.s-icon a:hover .icon-bzcxq{background-position:-514px -100px}
+.icon-txzb{width:24px;height:35px;background-position:-544px -65px}
+.s-icon a:hover .icon-txzb{background-position:-544px -100px}
+.icon-qyzs{width:31px;height:33px;background-position:-568px -65px}
+.s-icon a:hover .icon-qyzs{background-position:-568px -100px}
+.icon-gwdhq{width:24px;height:31px;background-position:-599px -65px}
+.s-icon a:hover .icon-gwdhq{background-position:-599px -100px}
+.icon-gfzlz{width:34px;height:26px;background-position:-708px -120px;}
+.s-icon a:hover .icon-gfzlz{background-position:-708px -151px}
+.icon-17173{width:32px;height:22px;background-position:-743px -120px;}
+.s-icon a:hover .icon-17173{background-position:-743px -151px}
+.icon-lsbb{width:27px;height:27px;background-position:-777px -120px;}
+.s-icon a:hover .icon-lsbb{background-position:-777px -151px}
+.icon-mh{width:28px;height:30px;background-position:-835px -120px;}
+.s-icon a:hover .icon-mh{background-position:-835px -151px}
+.icon-xs{width:28px;height:28px;background-position:-867px -120px;}
+.s-icon a:hover .icon-xs{background-position:-867px -151px}
+.icon-stddh{width:36px;height:29px;background-position:-897px -120px;}
+.s-icon a:hover .icon-stddh{background-position:-897px -151px}
+.icon-aldms{width:24px;height:26px;background-position:-934px -120px;}
+.s-icon a:hover .icon-aldms{background-position:-934px -151px}
+.icon-music{width:28px;height:28px;background-position:0 -206px;}
+.s-icon a:hover .icon-music{background-position:0 -237px}
+.s-icon{padding:32px 0 0 0;overflow:hidden;zoom:1}
+.s-icon-bk{width:443px;float:left}
+.s-icon li{text-align:center;display:inline-block;width:104px;margin:0 0 45px 0}
+.s-icon li{*display:inline}
+.menu-guide-list a{color:#333;display:inline-block}
+.menu-guide-list a:hover{color:#ec4828}
+.bk-sub-nav{float:left;color:#333;padding:0 0 0 50px;height:190px;margin:15px 0;border-left:1px solid #e8e8e8;width:360px}
+.bk-sub-nav-video{width:545px;}
+.bk-sub-nav-video-btn{float:left;padding:60px 0 0 80px;margin:10px 0;height:148px;border-left:1px solid #e8e8e8;}
+.bk-sub-nav-video-btn li{margin:0 0 10px 0;}
+.bk-sub-nav-video-btn .icon-video-btn{display:inline-block;width:21px;height:21px;background-position:-708px -179px;position:relative;top:5px;margin:0 5px 0 0;*top:0px;}
+.bk-sub-nav h4{font-weight:bold;font-size:14px;}
+.bk-sub-nav p{padding:3px 0;}
+.bk-sub-nav a{display:inline-block;margin:0 10px 5px 0}
+.bk-sub-nav a{*display:inline}
+.job-sub-nav{padding:70px 0 0 0}
+.job-sub-nav a{display:inline-block;width:10%;margin:10px 0;text-align:center}
+.modle-enter{position: relative;border:1px solid #e8e8e8;margin:24px 0;}
+.modle-enter:hover,.week-act:hover,.shop-push:hover{box-shadow:0px 0px 9px #e8e8e8;border-radius:3px;}
+.tit-line{color:#333;font-size:14px;text-align:center;border-bottom:1px solid #e8e8e8;margin:0 13px;font-weight:bold;height:36px;line-height:36px}
+.modle-enter ul{overflow:hidden;zoom:1;padding:10px;font-size:0px;}
+.modle-enter li{display:inline-block;width:33%;text-align:center;margin:10px 0;font-size:12px;}
+.modle-enter li{*display:inline}
+.modle-enter li a{display:block;color:#333}
+.modle-enter a:hover{color:#ec4828}
+.modle-enter a:hover s,.s-icon a:hover s,.raiders-links a:hover s{-webkit-transform:rotate(10deg);-o-transform:rotate(10deg);-moz-transform:rotate(10deg)}
+.modle-enter s{display:block;margin:0 auto 5px auto}
+.menu-sns{position:relative;}
+.week-act{border:1px solid #e8e8e8;margin:0 0 24px 0;}
+.modle-tit{margin-bottom:20px;overflow:hidden;zoom:1}
+.modle-tit-more{float:right;height:20px;line-height:20px}
+.modle-tit-more a{color:#333}
+.modle-tit-more a:hover{color:#ec4828}
+.week-act-list{padding:0 13px;}
+.week-act-hd{text-align:center;border-bottom:1px solid #e8e8e8;}
+.week-act-hd li{display:inline-block;color:#333;padding:10px 4px;font-weight:bold;cursor:pointer;}
+.week-act-hd .cur{border-top:3px solid #ec4828;color:#ec4828;}
+.week-act-bd{padding:10px 0;}
+.week-act-bd li{line-height:24px;height:24px;overflow:hidden;zoom:1;position:relative;}
+.week-act-bd span{position:absolute;right:0px;top:2px;color:#cfcfcf;}
+.week-act-bd a{color:#333333;}
+.week-act-bd a:hover{color:#ec4828;}
+.week-act-icon{display:inline-block;width:4px;height:7px;background-position:0 -97px;margin:0 5px 0 0;position:relative;top:-1px;*top:-7px;}
+.week-act-bd li:hover .week-act-icon{background-position:-5px -97px;}
+.week-act-hd li,.week-act-icon{*display:inline;}
+
+.act-links{margin:0 13px;border-top:1px solid #e8e8e8;padding:13px 0;}
+.act-links a{color:#333;margin-left:20px}
+.act-links a:hover{color:#ec4828}
+
+.icon-cdk{width:21px;height:21px;background-position:-12px 0}
+.modle-enter a:hover .icon-cdk{background-position:-12px -33px}
+.icon-black{width:29px;height:22px;background-position:-34px 0}
+.modle-enter a:hover .icon-black{background-position:-34px -33px}
+.icon-online{width:24px;height:21px;background-position:-65px 0}
+.modle-enter a:hover .icon-online{background-position:-65px -33px}
+.icon-safe{width:24px;height:24px;background-position:-90px 0}
+.modle-enter a:hover .icon-safe{background-position:-90px -33px}
+.icon-light{width:26px;height:32px;background-position:-115px 0}
+.modle-enter a:hover .icon-light{background-position:-115px -33px}
+.icon-shop{width:24px;height:22px;background-position:-143px 0}
+.modle-enter a:hover .icon-shop{background-position:-143px -33px}
+.icon-bbs{width:23px;height:21px;background-position:-168px 0}
+.modle-enter a:hover .icon-bbs{background-position:-168px -33px}
+.icon-wechat{width:29px;height:23px;background-position:-192px 0}
+.modle-enter a:hover .icon-wechat{background-position:-192px -33px}
+.icon-t{width:29px;height:19px;background-position:-223px 0}
+.modle-enter a:hover .icon-t{background-position:-223px -33px}
+.icon-service{width:29px;height:25px;background-position:-223px 0}
+.modle-enter a:hover .icon-service{background-position:-223px -33px}
+
+.icon-radio{width:25px;height:20px;background-position:-253px 0}
+.modle-enter a:hover .icon-radio{background-position:-253px -33px}
+.icon-draw{width:23px;height:22px;background-position:-279px 0}
+.modle-enter a:hover .icon-draw{background-position:-279px -33px}
+.icon-happy{width:29px;height:20px;background-position:-303px 0}
+.modle-enter a:hover .icon-happy{background-position:-303px -33px}
+.shop-push{border:1px solid #e8e8e8;border-bottom:0}
+.shop-bd{height:240px;overflow:hidden;position:relative}
+.shop-bd ul{padding:30px 0 0 32px;position:absolute;left:0;top:0}
+.shop-bd li{overflow:hidden;zoom:1;margin:0 0 30px 0;width:100%;height:50px;overflow:hidden;float:left}
+.shop-img{float:left}
+.shop-img img{border-radius:3px;}
+.shop-info{padding:0 0 0 60px;line-height:14px}
+.shop-text{color:#333}
+.shop-money{font-weight:bold;margin:2px 0 0 0}
+.shop-btn{color:#fff;background-color:#383635;display:block;width:57px;height:17px;line-height:17px;text-align:center;margin-top:3px}
+.shop-hd{text-align:center;margin:20px 0 0 0}
+.shop-hd li{display:inline-block;width:8px;height:8px;background-color:#d0d0d0;border-radius:50%;margin:0 6px;cursor:pointer}
+.shop-hd li{*display:inline}
+.shop-hd li.cur{background-color:#ec4828}
+.shop-more{text-align:center;padding:10px 0 30px 0}
+.shop-more a{color:#000}
+.shop-more a:hover{color:#ec4828}
+.teamwork{background-color:#f3f1ed;padding:25px 0;border:1px solid #e8e8e8;border-top:0}
+.teamwork-select h3{border:3px solid #d0d0d0;color:#bbb;padding:5px;margin:0 17px;position:relative}
+.icon-teamwork{display:block;width:9px;height:7px;background-position:0 -8px;position:absolute;right:7px;top:11px}
+.teamwork-list{position:absolute;z-index:999;width:152px;border:1px solid #e8e8e8;background-color:#fff;margin:0 17px;line-height:20px;padding:5px;height:200px;overflow-y:auto;display:none}
+.teamwork-list a{color:#bbb}
+.teamwork-list a:hover{color:#000}
+.teamwork-img h3{text-align:center;padding:5px 0;color:#bbb}
+.teamwork-img a{display:block;margin:0 auto;-webkit-filter:grayscale(100%);-webkit-filter:grayscale(1);filter:grayscale(100%);filter:gray;filter:alpha(opacity=20);opacity:.2}
+.teamwork-img a:hover{-webkit-filter:grayscale(0);-webkit-filter:grayscale(0);filter:grayscale(0);filter:none;filter:alpha(opacity=100);opacity:1}
+.icon-bank{width:122px;height:33px;background-position:0 -65px}
+.sideGg{margin:24px 0;}
+.sideGg a,.sideGg img{display:block;height:90px;}
+.weixin{border:1px solid #e8e8e8;margin:24px 0 0 0;}
+.weixin-img{width:170px;height:242px;margin:10px auto;}
+.weixin-intro{color:#333333;line-height:22px;padding:0 0 10px 13px;}
+.weixin-intro-o{background-color:#f3f1ed;padding:20px 13px;line-height:20px;}
+
+.main{padding-left:200px}
+.icon-tit{display:inline-block;width:22px;height:22px;background-position:-297px -71px;margin-right:12px}
+.nav-fixed{width:50px;background-color:#282725;position:fixed;left:0;top:0;height:100%}
+.nav-fixed ul{padding:0 13px 0 13px;position:absolute;height:495px;top:50%;margin-top:-247px}
+.nav-fixed li{margin:0 0 25px 0}
+.nav-fixed li a{color:#777;display:inline-block}
+.nav-fixed li a:hover{color:#ec4828}
+.icon-fixed-n{display:inline-block;width:21px;height:21px;background-position:-343px -106px}
+.nav-fixed li a:hover .icon-fixed-n{background-position:-343px -128px}
+.nav-fixed li s{display:block;margin:0 auto 5px auto}
+.top{width:40px;position:fixed;left:50%;bottom:10px;margin:0 0 0 590px;z-index:9999}
+.top a{display:block;height:39px;overflow:hidden;text-indent:-999em}
+.icon-top{background-position:-626px -102px;margin-bottom:1px}
+.icon-top:hover{background-position:-667px -102px}
+.icon-edit{background-position:-626px -143px}
+.icon-edit:hover{background-position:-667px -143px}
+.footer{width:100%;background:#282725;clear:both;dn}
+.f-infos{position:relative;padding:30px 0 30px 320px;width:715px;color:#8c8c8c;margin:0 auto}
+.tencent-game{width:220px;height:43px;background-position:-215px -436px;position:absolute;top:30px;left:75px;z-index:0}
+.f-infos a{color:#8c8c8c}
+.f-infos span{display:inline-block;margin:0 6px 0;*margin-bottom:3px;margin-bottom:0\0;width:1px;height:6px;overflow:hidden;background:#454446}
+.f-infos p.r{_display:inline;float:right;margin:-13px 9px 0 0}
+.f-infos p.e{margin-top:5px;font-size:10px;font-family:Tahoma}
+.f-infos p.license{padding:0 5px;margin-top:3px;width:100%;background-color:#313131;height:21px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#7f7f7f;line-height:21px}
+.f-infos p.license em{margin:0 0 0 10px;font-style:normal;font-weight:normal}
+.f-infos a.tg{display:block;width:115px;height:40px;text-indent:-999px;overflow:hidden}
+.f-infos .copyright{font-size:10px;font-family:Tahoma}
+.f-infos p.e,.f-infos .copyright{font-variant:small-caps;-webkit-transform:scale(0.8)}
+@media screen and (-webkit-min-device-pixel-ratio:0){.f-infos p.e,.f-infos .copyright{margin:0 0 0 -77px}
+}
+.chromeframe{background: #000;color: #fff;padding: 10px 0; text-align: center;width: 100%;font-size: 14px}
+.chromeframe a{color: #F13C35}
+.main-menu-list .sprite-icon{display:none;}
+
+
+/*  |xGv00|687d850c81564cba5df5bf3c0ff72601 */.head{height:423px;position:relative;}
+.logo{width:189px;height:135px;margin:0 57px 0 -46px;float:left}
+.logo a{display:block;height:100%}
+.top-chapter{width:369px;height:141px;position:absolute;left:335px;top:278px;}
+.top-chapter a{display:block;height:100%;overflow:hidden;text-indent:-999em;}
+.main-menu{position: relative;z-index:2;width:828px;float:left}
+.main-menu-top{overflow:hidden;zoom:1;padding:42px 0 0 0}
+.main-menu-top li{width:56px;height:15px;float:left;margin-right:71px;position:relative;}
+.main-menu-top li span{display:inline-block;background-color:#ff0020;position:absolute;right:-26px;top:-2px;border-radius:5px;padding:0 3px;color:#fff;}
+.main-menu-list li span{display:inline-block;background-color:#ff0020;position:absolute;right:-16px;top:5px;height:13px;line-height:13px;border-radius:5px;padding:0 3px;color:#fff;}
+.main-menu-top li .update_num_null,.main-menu-list li .update_num_null{display:none;}
+.main-menu-top .main-menu-top-o{width:27px}
+.main-menu-top .main-menu-top-last{margin-right:0}
+.main-menu-top a{display:block;height:100%;overflow:hidden;text-indent:-999em}
+.main-menu-list{overflow:hidden;zoom:1;padding:20px 0 0 0}
+.main-menu-list ul{width:65px;float:left;line-height:22px;margin-right:52px;text-align:center}
+.main-menu-list li{position:relative}
+.main-menu-list li s{display:inline-block;min-width:12px;height:12px;position:absolute;top:4px;color:#fff;background-color:#ec4828;line-height:12px;font-size:10px;padding:2px 3px;margin:0 0 0 9px;text-decoration:none;}
+.main-menu-list li .icon-TopUpdataNumIcon{display:inline-block;width:4px;height:12px;background-position:-30px -253px;position:absolute;left:-4px;top:2px;}
+.main-menu-list .icon-TopUpdataNum{display:inline-block;}
+.icon-hot{background-position:0 -33px}
+.icon-new{background-position:0 -43px}
+.main-menu-list a:hover{color:#ec4828}
+.main-menu-list .main-menu-list-o0{margin-right:61px}
+.main-menu-list .main-menu-list-o1{margin-right:53px}
+.main-menu-list .main-menu-list-o2{margin-right:33px}
+.main-menu-list .main-menu-list-o3{margin-right:50px}
+.main-menu-list .main-menu-list-o4{margin-right:61px}
+.main-menu-list .main-menu-list-o5{margin-right:60px}
+.main-menu-list a{color:#aeaeae}
+.weixin-tip{position:absolute;z-index:9999;display:none;}
+.weixin-t1{left:818px;top:120px;}
+.weixin-t1 .weiXinImg{background:url(//ossweb-img.qq.com/images/dnf/web2015/weixin-img.png) no-repeat 0 0;width:243px;height:284px;}
+.weixin-t2{left:0px;top:105px;}
+.weixin-t2 .weiXinImg{background:url(//ossweb-img.qq.com/images/dnf/web2015/weixin-img2.png) no-repeat 0 0;width:200px;height:271px;}
+.weixin-img-close{position:absolute;right:-40px;top:7px;width:35px;height:35px;background-position:-588px -138px;}
+.weixin-t2 .weixin-img-close{width:19px;height:19px;background-position:-596px -146px;right:-25px;top:7px;}
+
+.weixin-t3{left:190px;top:60px;}
+.weixin-t3 .weiXinImg{background:url(//ossweb-img.qq.com/images/dnf/web2015/popup-service1.png) no-repeat 0 0;width:183px;height:304px;}
+.weixin-t4{left:190px;top:100px;}
+.weixin-t4 .weiXinImg{background:url(//ossweb-img.qq.com/images/dnf/web2015/popup-service2.png) no-repeat 0 0;width:168px;height:229px;}
+.weixin-t5{left:818px;top:98px;}
+.weixin-t5 .weiXinImg{background:url(//ossweb-img.qq.com/images/dnf/web2015/app-img.png) no-repeat 0 0;width:243px;height:284px;}
+
+/*  |xGv00|262e294c7eb0a2ccb2f52c5b1478f014 */.page-news{background-color:#fff;width:730px;margin:0 0 0 30px;padding:0 50px 0 50px;min-height:1550px;}
+.page-news-top{padding:38px 0 33px 0;position:relative;}
+.position{position:absolute;right:0;top:47px;color:#333333;}
+.position a{color:#333333;}
+.icon-tit-news{display:inline-block;width:138px;height:21px;background-position:-368px -131px;}
+.news-list{}
+.news-list-hd{border-left:1px solid #e8e8e8;}
+.news-list-hd li{display:inline-block;border-top:1px solid #e8e8e8;border-right:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;position:relative;}
+.icon-news-push{display:inline-block;text-align:center;width:12px;height:9px;line-height:9px;color:#fff;font-size:3px;background-position:-368px -53px;position:absolute;right:2px;top:15px;}
+.news-list-hd .cur{border:none;background-color:#ec4828;}
+.news-list-hd .cur a{color:#ffffff;}
+.news-list-hd li a{display:inline-block;padding:10px 31px;color:#333333;font-size:14px;font-weight:bold;}
+.wallpaper-list-hd li a{padding:10px 45px;}
+.news-list-hd li,.news-list-hd li a{*display:inline;}
+.news-list-bd{padding:10px 0;overflow:hidden;}
+.news-list-bd li{line-height:46px;border-bottom:1px solid #e8e8e8;font-size:14px;padding:0 10px;color:#999999;overflow:hidden;zoom:1;}
+.news-list-bd li span{float:right;}
+.news-list-bd a{color:#333333;margin-right:5px;}
+.news-list-bd a:hover{color:#ec4828;}
+.page{text-align:center;padding:15px 0 35px 0;}
+.page a{color:#333333;display:inline-block;background-color:#f3f1ed;}
+.page a,.page span{margin:0 5px;padding:2px 7px;background-color:#f3f1ed;border-radius:3px;}
+.page span{display:inline-block;}
+.page input {width:20px;text-align:center; margin:0 3px;}
+.page .cur,#Page_Container_154325 .currentP{background-color:#ec4828;color:#fff;}
+.news-detail{min-height:1155px;}
+.news-title{text-align:center;color:#333333;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;padding:36px 0 9px 0;}
+.news-title h2{color:#ec4828;font-size:24px;font-weight:bold;}
+.news-time{padding:10px 0;}
+.news-time span{margin:0 10px;}
+.news-time a{color:#333333;margin:0 10px;}
+.news-con{font-size:14px;line-height:25px;padding:10px 0;}
+.news-con img{max-width:100%;}
+.share{height:16px;text-align:right;padding:10px 0 20px 0;}
+.share span{position:relative;top:-3px;*top:3px;}
+.share a{display:inline-block;width:16px;height:16px;margin:0 2px;cursor:pointer;}
+.share a{*display:inline;}
+.weibo{background-position:-368px -153px;}
+.qzone{background-position:-389px -153px;}
+.kaixin{background-position:-410px -153px;}
+.renren{background-position:-431px -153px;}
+.baidu{background-position:-452px -153px;}
+.dnf-intro{color:#333;border-top:1px solid #e8e8e8;padding:22px 0 100px 0;}
+.dnf-head{width:132px;height:132px;float:left;}
+.dnf-intro p{line-height:25px;padding:15px 0 0 152px;}
+.icon-tit-wallpaper{display:inline-block;width:149px;height:21px;background-position:-368px -172px;}
+.wallpaper-list{overflow:hidden;zoom:1;padding:38px 0 0 0;margin-left:-26px;}
+.wallpaper-list li{float:left;margin:0 0 65px 26px;width:226px;}
+.wallpaper-img img{display:block;}
+.wallpaper-bd{padding:10px 0 0 0;}
+.wallpaper-title{font-weight:bold;}
+.wallpaper-down{float:right;margin-right: 6px;}
+.wallpaper-down a{color:#333333;}
+.wallpaper-down a:hover{color:#ec4828;}
+.icon-tit-event{display:inline-block;width:149px;height:21px;background-position:-775px -66px;}
+.icon-down{display:inline-block;width:7px;height:4px;background-position:0 -23px;margin:0 0 0 12px;position:relative;top:-2px;*top:-5px}
+.event-list{}
+.event-line{width:126px;height:3px;background-color:#ec4828;position:relative;top:3px;}
+.event-hd-links{text-align:right;border-top:1px solid #e8e8e8;padding:20px 0 0 0;}
+.event-hd-links a{color:#999;margin:0 0 0 10px;}
+.event-hd-links a:hover{color:#ec4828;}
+.event-bd{padding:20px 0 0 0;}
+.event-table-hd li{display:inline-block;padding:5px 0;width:120px;border-right:1px solid #e8e8e8;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;text-align:center;color:#333333;font-weight:bold;font-size:14px;}
+.event-table-hd li{*display:inline;}
+.event-table-hd .event-table-other{border-left:1px solid #e8e8e8;}
+.event-table-bd li{padding:10px 0;border-bottom:1px solid #e8e8e8;color:#333333;}
+.event-table-bd li span{display:inline-block;width:120px;text-align:center;}
+.event-table-bd li span a{display:block;width:41px;height:18px;background-color:#ff0000;color:#fff;margin:0 auto;}
+
+.act-content{background-color:#fff;width:920px;margin:0 auto;padding:0 70px;}
+.act-list{position:relative;}
+.act-list-hd{border-left:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
+.act-list-hd li{display:inline-block;border-top:1px solid #e8e8e8;border-right:1px solid #e8e8e8;position:relative;}
+.icon-tit-act{display:inline-block;width:160px;height:20px;background-position:-775px -87px;}
+.act-list-hd .cur{border:none;background-color:#ec4828;}
+.act-list-hd .cur a{color:#ffffff;}
+.act-list-hd li a{display:inline-block;padding:10px 30px;color:#333333;font-size:14px;font-weight:bold;}
+.act-sub-nav{position:absolute;right:0px;top:10px;overflow:hidden;zoom:1;}
+.act-sub-nav li{width:60px;height:18px;line-height:18px;float:left;}
+.act-sub-nav li a{display:block;height:18px;text-align:center;color:#fff;margin:0 10px 0 0;}
+.act-sub-nav .actOn{background-color:#ec4828;}
+.act-sub-nav .actOver{background-color:#383635;}
+
+.act-list-hd li,.act-list-hd li a{*display:inline;}
+.act-list-bd{padding:36px 0 10px 0;overflow:hidden;margin-left:-33px;}
+.act-list-bd li{border:1px solid #e8e8e8;color:#333333;overflow:hidden;zoom:1;margin:0 0 50px 33px;width:198px;overflow:hidden;height:170px;float:left; position:relative;}
+.act-list-bd li a{position:relative;color:#ec4828;display:block;height:90px;}
+.act-list-bd li .time{position:absolute;bottom:5px;left:8px;height:16px;line-height:16px;border:1px solid #ec4828;padding:0 5px;}
+.act-list-bd li img{width:200px;height:90px;}
+.act-list-bd li p { position:relative; z-index:100;}
+.act-info{padding:10px;}
+.act-list-bd .actOver img{-webkit-filter: grayscale(1);filter:gray;filter: grayscale(1);}
+.act-list-bd .actOver .time{background-color:#000;border:none;color:#ffffff;width:59px;height:18px;text-align:center;line-height:18px;padding:0px;}
+.noNum{text-align:center;font-size:14px;font-weight:bold;color:#ec4828;}
+
+.user_ico,.popup li span a { background-image:url(//ossweb-img.qq.com/images/dnf/web2015/user_info.jpg); background-repeat:no-repeat;}
+
+.act-list-bd span {display:block; position:absolute; width:38px; height:38px; right:5px; bottom:5px; overflow:hidden; text-indent:-9999px; z-index:90;}
+.vip {background-position:-251px -98px;}
+.dnf {background-position:-402px -98px;}
+.zone {background-position:-289px -98px;}
+.game {background-position:-365px -98px;}
+.music {background-position:-327px -98px;}
+.guanjia {background-position:-440px -98px;}
+.tgp {background-position:-479px -98px;}
+.qshow {background-position:-517px -98px;}
+.xinyue {background-position:-365px -135px;}
+.act-list-bd span.none {display:none;}
+
+.act_step_nav {height:24px; padding:12px 0 0;}
+.act_step_nav li {width:80px; height:24px; padding-right:1px; float:left; position:relative;}
+.act_step_nav li a {display:block; width:80px; height:24px; line-height:24px; text-align:center; background:#e8e8e8; color:#666666;}
+.act_step_nav li a em {display:none;}
+.act_step_nav li.cur a {background:#ec4828; color:#fff;}
+.act_step_nav li.cur a em {display:block; width:8px; height:4px; position:absolute; left:36px; bottom:-4px; overflow:hidden; background-position:-608px -116px;}
+/* */
+
+* html .q {height:1%;}
+*+html .q {height:1%;}
+.q:after {content:""; display:block; height:0; clear:both; overflow:hidden;}
+.page-user-top{padding:38px 0 0;position:relative; border-bottom:1px solid #e8e8e8;}
+.icon-tit-achievement{display:inline-block;width:160px;height:20px;background-position:-588px -206px;}
+.icon-tit-fact{display:inline-block;width:210px;height:20px;background-position:-143px -241px;}
+.icon-tit-ract{display:inline-block;width:210px;height:20px;background-position:-368px -241px;}
+.icon-tit-account{display:inline-block;width:210px;height:20px;background-position:-757px -222px;}
+
+.user {display:none;}
+.login {width:170px; padding:0 15px; height:240px; background:url(//ossweb-img.qq.com/images/dnf/web2015/user_info.jpg) no-repeat;}
+.login h3 {height:52px; text-indent:17px; margin-bottom:10px; font-size:18px; font-weight:bold; color:#fff; line-height:52px;}
+
+.login #unlogin a {display:block; width:140px; height:40px; line-height:40px; text-align:center; color:#ec4828; font-size:14px; font-weight:bold; background:#e6e6e6; margin:20px auto;}
+
+
+.login #unlogin p,.login #unlogin li {color:#999999; padding:0 17px; line-height:22px;}
+.login #unlogin p{padding:10px 10px 0;}
+.login #logined p {font-weight:bold;color:#fff;}
+.user-info,.user-info span {color:#fff;}
+.login #logined .user-info p,.login #logined .user_vip {font-weight:normal;}
+.user_vip {margin-top:20px; color:#999999; line-height:24px;}
+.login #logined a {color:#ff0; margin-left:5px;}
+.login #logined a:hover { color:#fff;}
+.login #role_chanage_btn_area_display { text-align:right;}
+.login #unlogin li {padding:0 10px;}
+.login #logined .user-info {height:32px;}
+.personal {border:1px solid #e8e8e8; margin:24px 0 0 0; background:#ffffff; padding:15px 37px;}
+.personal li {border-bottom:1px solid #f2f2f2; height:29px;}
+.personal li a {display:block; height:29px; line-height:29px; color:#333333; font-weight:bold;}
+.personal li a.cur,.personal li a:hover {color:#ec4828;}
+.personal li s {display:inline-block; margin:0 12px; background-position:0 -53px; width:7px; height:7px;}
+
+.user_info {height:110px; padding:17px 0; color:#3f3f3f; position:relative;}
+.user_head {float:left; display:block; width:100px; height:100px;}
+.user_info h4,.user_info p {float:left; width:617px; padding:0 0 0 13px; line-height:22px;}
+.user_info h4 {font-size:18px; font-weight:bold; color:#ec4828; line-height:32px;}
+.user_info p a {color:#ec4828; text-decoration:underline;}
+.user_info p a:hover{text-decoration:none;}
+.share_qqbtn,.share_qqbtn:hover {display:block; top:10px; right:10px; position:absolute; width:115px; height:28px; line-height:28px; background:#ec4828; text-align:center; color:#fff; font-size:14px; font-weight:bold;}
+.share_qqbtn s {display:inline-block; width:19px; height:19px; margin:4px 0 -4px; background-position:-733px -180px;}
+.user_materials {}
+.user_materials li {float:left; width:130px; height:130px; border:1px solid #e8e8e8; border-radius:5px; text-align:center;}
+.user_materials li span {display:block; margin:10px auto 5px; width:50px; height:50px; background:#e8e8e8; border-radius:7px;}
+.user_materials li p {font-size:14px; font-weight:bold; color:#3f3f3f;}
+.user_materials li strong {color:#ec4828; font-size:30px;}
+.user_materials li strong.f_14 {font-size:14px; line-height:30px;}
+.user_materials_note {color:#3f3f3f; text-align:center; font-size:14px; padding:15px 0;}
+.user_materials_note a {color:#3f3f3f; font-weight:bold; text-decoration:underline;}
+.user_materials_note a:hover {color:#ec4828; text-decoration:none;}
+
+.user_more {margin:20px 0 0 650px; width:65px; display:block; color:#333}
+.user_more:hover {color:#ec4828;}
+.user_act_list {padding:0 0 40px;}
+.user_act_list li {width:200px; height:185px; padding:21px; float:left; position:relative;}
+.user_act_list span {display:block; position:absolute; width:38px; height:38px; right:25px; bottom:25px; overflow:hidden; text-indent:-9999px; z-index:90;}
+
+.user_act_list li p { position:relative; z-index:100;}
+.user_act_list a {display:block; position:relative;color:#ec4828;}
+.user_act_list img {display:block; width:200px; height:90px; border:none;}
+.user_act_list li .time{position:absolute;bottom:5px;left:8px;height:16px;line-height:16px;border:1px solid #ec4828;padding:0 5px;}
+.user_act_list .act-info {padding:10px 10px 40px; border:1px solid #e8e8e8; border-top:none;}
+.user_act_list .act-info p {padding:3px 0;}
+.user_act_list .act-info a {display:inline; position:absolute; bottom:34px; right:34px; color:#979792; text-decoration:underline;}
+.user_act_list .act-info a:hover {color:#ec4828; text-decoration:none;}
+.user_act_list .actOver img{-webkit-filter: grayscale(1);filter:gray;filter: grayscale(1);}
+.user_act_list .actOver .time{background-color:#000;border:none;color:#ffffff;width:59px;height:18px;text-align:center;line-height:18px;padding:0px;}
+
+.account_list li {float:left; width:365px; height:80px; padding-top:35px;}
+.account_list a {display:block; width:365px; height:80px;}
+.account_list a span {display:block; float:left; width:250px; color:#999999; line-height:22px;}
+.account_list a:hover span {color:#999999;}
+.account_list a strong {display:block; width:250px; font-size:18px; line-height:32px; color:#333333;}
+.account_list a:hover strong {color:#ec4828;}
+.account_list a span.icobox {float:left; width:78px; height:78px; border:1px solid #ebebeb; border-radius:7px;margin-right:22px;}
+.icobox s {display:block; width:44px; height:44px; margin:15px auto;}
+.uico89 {background-position:-200px -47px;}
+a:hover s.uico89 {background-position:-200px -1px;}
+.uico115 {background-position:-244px -47px;}
+a:hover s.uico115 {background-position:-244px -1px;}
+.uico67 {background-position:-288px -47px;}
+a:hover s.uico67 {background-position:-288px -1px;}
+.uico86 {background-position:-332px -46px;}
+a:hover s.uico86 {background-position:-332px 0;}
+.uico25 {background-position:-376px -46px;}
+a:hover s.uico25 {background-position:-376px 0;}
+.uico24 {background-position:-420px -46px;}
+a:hover s.uico24 {background-position:-420px 0;}
+.uico152 {background-position:-464px -46px;}
+a:hover s.uico152 {background-position:-464px 0;}
+.uico47 {background-position:-510px -48px;}
+a:hover s.uico47 {background-position:-510px -2px;}
+
+
+.popup {display:none; width:600px; height:340px; background:#fff; position:absolute;}
+.close_btn {display:block; width:50px; height:50px; overflow:hidden; text-indent:-9999px; background-position:-201px -93px; position:absolute; right:-50px; top:0;}
+.popup h3 {margin:20px 24px 0; border-bottom:1px solid #e3e3e3; text-align:center; font-size:18px; font-weight:bold; color:#333; line-height:35px;}
+.popup2 h3 {padding:55px 0 0 95px; margin:0; font-size:24px; border:none; text-align:left;}
+.popup2 p {padding-left:95px; font-weight:bold; font-size:14px;}
+.evaluate {width:250px; padding:56px 0 0 130px; margin-left:70px; height:208px; background-position:-560px 20px;}
+.evaluate li {height:45px;}
+.evaluate li strong {display:block; font-weight:normal; color:#898686; float:left; width:75px;}
+.evaluate li span {display:block; width:142px; height:20px; float:left; position:relative;}
+.evaluate li span a {display:block; height:20px; position:absolute; top:0; left:0; background-position:1203px 1149px;}
+.star1 {width:20px; z-index:5;}
+.star2 {width:50px; z-index:4;}
+.star3 {width:80px; z-index:3;}
+.star4 {width:112px; z-index:2;}
+.evaluate li span a.star5 {width:142px; z-index:1; background-position:-203px -149px;}
+.evaluate li span a:hover,.evaluate li span a.star5 :hover,.evaluate li span a.cur {background-position:-203px -171px;}
+.pop_btn {display:block; width:180px; height:40px; line-height:40px; text-align:center; font-weight:bold; font-size:18px; background:#ed4828; color:#fff;}
+
+.popup2 {width:500px; height:260px;}
+.btn_topline {border-top:1px solid #e3e3e3; margin:30px; padding:25px 0 0;}
+.btn_topline a.pop_btn {margin:0 auto;}/*  |xGv00|b6294e7a636684e93efedc0efadb30ed */
+</style>
+</head>
+<body>
+<script language="javascript">
+if("" == 1){
+	window.location.href = '';
+}
+</script>
+<div id="wrap">
+	<div id="container">
+		<div class="head">
+			<!--[if lt IE 7]>
+    <p class="chromeframe">您使用的IE浏览器版本过低。<a href="http://windows.microsoft.com/">升级您的IE浏览器</a>，或使用<a href="//www.google.com/chromeframe/?redirect=true">Google Chrome</a>、<a href="//www.google.com/chromeframe/?redirect=true">Firefox</a>等高级浏览器，将会得到更好的体验！</p>
+<![endif]-->
+<h1 class="logo"><a href="http://dnf.qq.com/main.shtml" onclick="pgvSendClick({hottag:'main.top.gw'});"></a></h1>
+<h2 class="top-chapter"><a href="/cp/a20151010yszl/" target="_blank" id="detail" onclick="pgvSendClick({hottag:'main.top.chapter'});"></a></h2>
+<div class="main-menu">
+	<ul class="main-menu-top">
+		<li><a href="//dnf.qq.com/main.shtml" onclick="pgvSendClick({hottag:'main.top.gw'});">官网首页</a></li>
+		<li><a href="//dnf.qq.com/act/a20121026gbook/glog.html" target="_blank" onclick="pgvSendClick({hottag:'main.top.yxzl'});">游戏资料</a><span id="top-num">0</span></li>
+		<li class="main-menu-top-o"><a href="//dnf.qq.com/act.shtml" target="_blank" onclick="pgvSendClick({hottag:'main.top.hd'});">活动</a></li>
+		<li class="main-menu-top-o"><a href="//dnf.qq.com/webplat/info/news_version3/119/499/m395/list_1.shtml" target="_blank" onclick="pgvSendClick({hottag:'main.top.ss'});">赛事</a></li>
+		<li><a href="//helper.qq.com/v2/tool-list.shtml" target="_blank" onclick="pgvSendClick({hottag:'main.top.zjff'});">自助服务</a></li>
+		<li><a href="//dnf.qq.com/act/a20110523safe/" target="_blank" onclick="pgvSendClick({hottag:'main.top.zhaq'});">账号安全</a></li>
+		<li class="main-menu-top-last"><a href="//dnf.gamebbs.qq.com/" target="_blank" onclick="pgvSendClick({hottag:'main.top.wjsq'});">论坛社区</a></li>
+	</ul>
+	<div class="main-menu-list">
+		<ul class="main-menu-list-o0">
+			<!--<li><a href="/community2016/" target="_blank" onclick="pgvSendClick({hottag:'main.top.community'});">共创社区</a></li>-->
+			<li><a href="//dnf.qq.com/act/a20170406collect/" target="_blank" onclick="pgvSendClick({hottag:'main.top.collect'});">共创第二季</a></li>
+			<li><a href="//dnfcity.qq.com/" target="_blank" onclick="pgvSendClick({hottag:'main.top.dnfcity'});">周边商城</a></li>
+			<li><a href="//daoju.qq.com/dnf/" target="_blank" onclick="pgvSendClick({hottag:'main.top.djc'});">道聚城</a></li>
+		</ul>
+		<ul class="main-menu-list-o1">
+			<li><a href="//dnf.qq.com/webplat/info/news_version3/119/495/m394/list_1.shtml" target="_blank" onclick="pgvSendClick({hottag:'main.top.news'});">新闻公告</a><span id="top-num-news">0</span></li>
+			<li><a href="//dnf.qq.com/act/a20121026gbook/glog.html" target="_blank" onclick="pgvSendClick({hottag:'main.top.xszn'});">新手指南</a></li>
+			<li><a href="/webplat/info/news_version3/119/495/14251/m394/list_1.shtml" target="_blank" onclick="pgvSendClick({hottag:'main.top.bbzt'});">版本专题</a></li>
+			<li><a href="//dnf.qq.com/webplat/info/news_version3/119/26208/m17081/list_1.shtml" target="_blank" onclick="pgvSendClick({hottag:'main.top.raider'});">职业攻略</a><span id="top-num-gl">0</span></li>
+			<li><a href="//dnf.qq.com/web2015/pic.shtml" target="_blank" onclick="pgvSendClick({hottag:'main.top.tpzx'});">壁纸时装</a></li>
+			<!-- <li><a href="//dnf.qq.com/v/" target="_blank" onclick="pgvSendClick({hottag:'main.top.spzx'});">视频中心</a></li> -->
+		</ul>
+		<ul class="main-menu-list-o2">
+			<li><a href="//dnf.qq.com/act.shtml" target="_blank" onclick="pgvSendClick({hottag:'main.top.hdzx'});">官方活动</a></li>
+			<li><a href="//dnf.qq.com/act.shtml?pAct" target="_blank" onclick="pgvSendClick({hottag:'main.top.hzhd'});">合作活动</a></li>
+			<li><a href="//dnf.qq.com/act.shtml?mAct" target="_blank" onclick="pgvSendClick({hottag:'main.top.media_act'});">媒体活动</a></li>
+			<li><a href="//dnf.qq.com/cp/a20170117sign/" target="_blank" onclick="pgvSendClick({hottag:'main.top.mrqd'});">每日签到</a></li>
+			<li><a href="//dnf.qq.com/cp/a20170525week/" target="_blank" onclick="pgvSendClick({hottag:'main.top.mzhd'});">每周活动</a></li>
+		</ul>
+		<ul class="main-menu-list-o3">
+			<!--<li><a href="/cp/a20150316qnss/index.htm" target="_blank" onclick="pgvSendClick({hottag:'main.top.event'});">全年赛事</a></li>-->
+			<li><a href="//dnf.qq.com/act/a20170418fight/index.shtml" target="_blank" onclick="pgvSendClick({hottag:'main.top.event1'});">格斗大赛</a></li>
+			<li><a href="//dnf.qq.com/act/a20160831league/" target="_blank" onclick="pgvSendClick({hottag:'main.top.event2'});">职业联赛</a></li>
+			<li><a href="/act/2016f1/" target="_blank" onclick="pgvSendClick({hottag:'main.top.event3'});">F1天王赛</a></li>
+			<li><a href="//longzhu.com/topic/lzjs" target="_blank" onclick="pgvSendClick({hottag:'main.top.event4'});">解说大赛</a></li>
+		</ul>
+		<ul class="main-menu-list-o4">
+			<li><a href="//dnf.qq.com/comm-htdocs/pay/new_index.htm?t=dnf" target="_blank" onclick="pgvSendClick({hottag:'main.top.cz'});">充值</a></li>
+			<li><a href="//helper.qq.com/v2/pages/search/bill-query.shtml?gid=dnf&cid=86" target="_blank" onclick="pgvSendClick({hottag:'main.top.xfjl'});">消费记录</a></li>
+			<li><a href="//dnf.qq.com/act/a20090219dltb/" target="_blank" onclick="pgvSendClick({hottag:'main.top.dltb'});">点亮图标</a></li>
+			<li><a href="//dnf.qq.com/web2013/cdkey.shtml" target="_blank" onclick="pgvSendClick({hottag:'main.top.cdk'});">兑换CDKEY</a></li>
+			<li><a href="//dnf.qq.com/tools/RoleRestore/role_restore.shtml" target="_blank" onclick="pgvSendClick({hottag:'main.top.jshf'});">角色恢复</a></li>
+		</ul>
+		<ul class="main-menu-list-o5">
+			<li><a href="//dnf.qq.com/cp/a20160701convention/" target="_blank" onclick="pgvSendClick({hottag:'main.top.nwdzc'});">安全公约</a></li>
+			<li><a href="//gamesafe.qq.com/title.shtml" target="_blank" onclick="pgvSendClick({hottag:'main.top.fhcx'});">封号查询</a></li>
+			<li><a href="//dnf.qq.com/cp/a20151028spxt/index.html" target="_blank" onclick="pgvSendClick({hottag:'main.top.wgjb'});">视频举报</a></li>
+			<li><a href="//kf.qq.com/faq/150629B3M7jm1607066Br2Ar.html" target="_blank" onclick="pgvSendClick({hottag:'main.top.bdzh'});">被盗找回</a></li>
+			<li><a href="//gamesafe.qq.com/special/dnf/index.htm" target="_blank" onclick="pgvSendClick({hottag:'main.top.xyxj'});">信用星级</a></li>
+		</ul>
+		<ul><li><a href="javascript:dnf.showWeiXin('5');" onclick="pgvSendClick({hottag:'main.top.app'});">DNF助手</a></li>
+			<li><a href="http://dnf.gamebbs.qq.com/forum.php" target="_blank" onclick="pgvSendClick({hottag:'main.top.bbs'});">论坛</a></li>
+			<li><a href="http:javascript:dnf.showWeiXin('1');" onclick="pgvSendClick({hottag:'main.top.wx'});">微信</a></li>
+			<li><a href="http://weibo.com/u/5927795180" target="_blank" onclick="pgvSendClick({hottag:'main.top.wb'});">微博</a></li>
+			<li><a href="http://bang.qq.com/wenda/index/dnf" target="_blank" onclick="pgvSendClick({hottag:'main.top.wd'});">问答</a></li>
+		</ul>
+	</div>
+</div>
+<div class="weixin-tip weixin-t1" id="weixin-tip">
+	<div class="weiXinImg"></div>
+	<a href="javascript:;" onclick="javascript:dnf.hideWeiXin(this);" class="sprite-icon weixin-img-close"></a>
+</div>
+<div class="weixin-tip weixin-t5" id="weixin-tip5">
+	<div class="weiXinImg"></div>
+	<a href="javascript:;" onclick="javascript:dnf.hideWeiXin(this);" class="sprite-icon weixin-img-close"></a>
+</div><!--[if !IE]>|xGv00|ca19690a9b630c75885377b520c95bce<![endif]-->
+		</div>
+		<div class="content">
+			<div class="main">
+				<div class="page-news">
+					<div class="page-news-top">
+						<div class="modle-tit"><s class="sprite-icon icon-tit"></s><s class="sprite-icon icon-tit-news"></s></div>
+						<div class="position">您所在的位置： <a href="http://dnf.qq.com/main.shtml">首页</a> > 新闻中心</div>
+					</div>
+					<div class="news-detail">
+						<div class="news-title">
+							<h2>6月29日更新公告 </h2>
+							<p class="news-time">《地下城与勇士》运营团队 2017-06-29 09:18:38 <span>|</span>字体：【<a href="javascript:dnf.doZoom(16)">大</a><a href="javascript:dnf.doZoom(14)">中</a><a href="javascript:dnf.doZoom(12)">小</a>】</p>
+						</div>
+						<div class="news-con" id="news-con">
+							<p><span style="font-family: 微软雅黑;"><strong>充不起钱的穷逼们：</strong></span></p>
+<p><br /><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp;      6月29日更新后，每位玩家都将会以邮件的形式收到一瓶500倍深渊爆率药水。更新之后部分玩家将有客户端闪退的问题，我们经验证只有充钱少的玩家才会掉线，充的多是不会掉线的。毕竟我们是大公司，充够钱了就能保证不让你掉线。你可以来这里充钱：<a href="https://pay.qq.com">https://pay.qq.com</a> 我们是腾讯，我们的口号是：腾讯游戏，用钱创造欢乐，腾讯游戏，没钱玩你麻痹</span></p>
+<p>首先，感谢大家对我们多次改版的认同。自从对论坛中的不满意党进行永久封号处理以后，大部分，不，是全部的元素玩家都表示满意了。<br>这是我们愿意看到的结果，也是对我们改版的肯定与支持，再次表示感谢。<br>我们曾明确发言表示，元素这个职业，不能有抓取，不能有控制，不能有45大。<br>但是现在我们自打脸了，给了元素一个超大范围的全职业最强先手控，还给了一个毁天灭地的45大，我相信这是元素玩家对我们此次改版的满意点之一。<br>但是在正式服更新以后发现，一个完美的元素，一套技能打出的伤害，仍旧能抵母鸡一发狂风的10%，这是严重违反游戏平衡的，也是我们始料未及的。<br>我们本以为和谐了猴戏以后，元素应该跌入下水道。没想到元素不但能跑，还跳了起来，这是我们坚决不能容忍的。<br>因为挨个调整技能数据较为麻烦，所以我们修复了[属性精通]的双倍bug。这个bug是我们以前埋设好的，现在终于派上用场了。<br>修复后，部分元素玩家的伤害确实得到了削弱，但是部分高端元素玩家的伤害仍旧过高。<br>这使我们明确地意识到：单纯削弱元素师的技能面板数据，已经无法阻止高端元素玩家继续装13了。<br>于是，我们机智地修复了“秒蓄”带了的作用效果“秒读”，尽量增大元素师释放技能时被破招的概率，来降低元素师的总体输出。<br>前几天这一条改动已经登陆正式服，效果显著。部分低释放的元素玩家，输出能力确实得到了削弱。<br>但是有一部分投机取巧的玩家，通过堆释放，以及在前一个图蓄气技能后跑到下一个地图放，来增加容错率。这是明着与我们的改版进行对抗，我们对此采取0容忍的态度。<br>6月中旬，我们将对全职业进行一次平衡，相信通过此次改版，元素师释放速度过高以及可以憋着技能过图的这一严重的历史遗留问题将会得到完美的解决。<br>我们预计在6月中旬对元素师进行以下改版：<br>【元素师】<br> 通用技能调整：<br>-[受身蹲伏]<br> 蹲伏时为霸体状态<br>-[替身草人]<br> 冷却时间+30秒<br> 瞬移后僵直时间+3秒<br>-[驱散魔法]<br> 新增释放后追加减少[元素师]三速的机能<br> 专属技能调整：<br>-[元素师布甲专精]<br> 增加释放速度的效果删除<br>-[魔法记忆]<br> 增加释放速度的效果删除<br>-[移动施法]<br> 技能删除<br> 增加被破招伤害25%的效果变为职业常驻特性<br>-[魔法秀]<br> 减少蓄气时间的效果与[魔法记忆]的叠加方式变更为乘算<br>-[元素点燃]<br> 变更为完全随动技能<br> 新增不穿增幅9无法释放该技能的机制<br>-[冰墙]<br> 攻击力+6%<br>-[元素震荡]<br> 释放后脱手<br> 脱手后进入受身蹲伏状态6秒<br>-[圣灵符文]<br> 增强[魔法秀]效果的机能删除<br>-[第六元素]<br> 吸附攻击力-20%<br> 爆炸攻击力+400%<br> 爆炸命中率-1000%<br>【元素师】新增以下机制：<br>-新增[元素师]前一个技能不消失无法释放下一个技能的机制<br>-新增[元素师]组队时无法释放技能的机制<br>-新增[元素师]组队时移动速度-200%的机制<br>-新增[元素师]组队时无法获得其他职业buff的机制<br>-新增[元素师]除[克隆天空]外无法穿戴其他装扮的机制<br>-新增[元素师]通关地下城时间＜30分钟时进行制裁的机制<br>【元素师】部分bug修复：<br>-修复[元素师]可以正常进行游戏的bug<br>-修复[元素师]外形过于俏丽可爱的bug<br>-修复[元素师]游戏中可以发言的bug<br>-修复[元素师]可以进入决斗场的bug<br>-修复[元素师]可以进入修炼场的bug<br>-修复[元素师]可通过深渊派对获得史诗装备的bug<br>我们将对元素师持续密切关注，如若在卢克Raid中DPS超过10%，我们将对[元素师]职业进行删除处理。<br>但凡是和元素沾亲带故，或是为元素说情的人，都是乱臣贼子，人人得而诛之。<br>我们在某论坛发现以下图片，这是对我们最为严重的嘲讽，我们对此的态度是：0容忍,必严惩！！！【图片】通过我们策划聪明的大脑，通过PS技术看清了玩家的ID，并在数据库中查找，精确定位，终于发现了该玩家的职业是一名[魔道学者]。<br>所以在6月中旬的职业平衡中，我们将追加以下改版：<br>-[魔道学者]<br> 职业删除【图片】<br></p>
+						</div>
+												<div class="share" id="share"></div>
+						<div class="dnf-intro"><div class="dnf-head"><img src="http://ossweb-img.qq.com/images/dnf/web2015/dnf-head.png" alt="" /></div><p>《地下城与勇士》作为全球2D横版格斗网络游戏（MMOACT）的先行者，凭借经典街机游戏网络化的创新理念和玩法成为了全球网络游戏发展史上的一个里程碑。与经典横版动作游戏别无二致的表现形式、无限连击的动作特性和极富多样化的职业分支使得《地下城与勇士》具有精准的操作体验与打击爽快感，让玩家全面回归游戏的本质，享受游戏过程而非游戏结果带来的快乐――这将是网游领域史无前例的进步！</p></div>
+					</div>
+				</div>
+			</div>
+			<div class="sider" id="page-sider">
+				<ul class="sider-top sprite-bg">
+  <li class="down" id="down"><a href="//dnf.qq.com/web2015/down.shtml" target="_blank">下载游戏</a></li>
+  <li class="regist"><a href="//zc.qq.com/chs/index.html" target="_blank">注册</a></li>
+  <li class="recharge"><a href="//dnf.qq.com/comm-htdocs/pay/new_index.htm?t=dnf" target="_blank">充值</a></li>
+  <li class="props"><a href="/cp/a20151127xslb/index.htm" target="_blank">新手礼包</a></li>
+</ul>
+<div class="user">
+
+    <div id="unlogin" class="login">
+      <a href="javascript:loginFunc();" onClick="pgvSendClick({hottag:'PageValue.unloginBtn'});">登录个人中心</a>
+      <p>登录后您可以：</p>
+      <ul>
+          <li>・ 定制属于您个人的官网</li>
+          <li>・ 查看角色信息</li>
+          <li>・ 参与感兴趣的精彩活动。</li>
+      </ul>
+    </div>
+    <div id="logined" style="display:none;">
+        <p><span id='login_qq_span'></span>，您好！<a href="javascript:logoutFunc();">注销</a></p>
+        <div class="user-info" id="player_info_area_display">
+            <p>当前角色：<span id="left_suozai_daqu"></span><span id="left_suozai_fuwuqi"></span></p>
+            <p><span id="left_role_zhiye"></span><span id="left_role_level"></span><span id="left_role_name"></span></p>
+        </div>
+        <div id="role_chanage_btn_area_display"><a href="javascript:clickRoleQiehuanBtn();" id="qihuan_jiaose_area">切换角色 &rsaquo;</a></div>
+        <p class="user-info user_vip"><span id="userVipType"></span><a href="/act.shtml?pAct">查看可参加的活动 &gt;</a></p>
+        <ul class="logined_btn">
+            <li><a href='javascript:showDialog.show({id:"edit_wrap",bgcolor:"#000",opacity:60});'>定制官网</a></li>
+            <li><a href='/user/account.shtml'>个人中心</a></li>
+        </ul>
+    </div>
+
+    <!-- role area end -->
+</div>
+<div class="menu-quick modle-enter">
+  <h3 class="tit-line">快速入口</h3>
+  <ul>
+    <li><a href="//dnf.qq.com/web2013/cdkey.shtml" target="_blank"><s class="sprite-icon icon-cdk"></s>CDK兑换</a></li>
+    <li><a href="//dnf.qq.com/act/blackDiamond/" target="_blank"><s class="sprite-icon icon-black"></s>黑钻专区</a></li>
+    <li><a href="//crm2.qq.com/page/portalpage/wpa.php?uin=40012345&f=1&ty=1&ap=000011:400994:|m:11|f:Gdnf7" target="_blank"><s class="sprite-icon icon-online"></s>在线客服</a></li>
+    <li><a href="//dnf.qq.com/act/a20110523safe/" target="_blank"><s class="sprite-icon icon-safe"></s>安全中心</a></li>
+    <li><a href="//dnfcity.qq.com/" target="_blank"><s class="sprite-icon icon-shop"></s>周边商城</a></li>
+    <script src="/web2015/inc/service.js"></script>
+  </ul>
+  <!-- add by sonic 2016-03-29 -->
+  <div class="weixin-tip weixin-t3" id="weixin-tip3">
+    <div class="weiXinImg"></div>
+    <a href="javascript:;" onclick="javascript:dnf.hideWeiXin(this);" class="sprite-icon weixin-img-close"></a>
+  </div>
+  <div class="weixin-tip weixin-t4" id="weixin-tip4">
+    <div class="weiXinImg"></div>
+    <a href="javascript:;" onclick="javascript:dnf.hideWeiXin(this);" class="sprite-icon weixin-img-close"></a>
+  </div>
+</div>
+<div class="menu-sns modle-enter belong-m">
+  <h3 class="tit-line">玩家社区</h3>
+  <ul>
+    <li><a href="//dnf.gamebbs.qq.com/forum.php" target="_blank"><s class="sprite-icon icon-bbs"></s>论坛交流</a></li>
+    <li><a href="javascript:dnf.showWeiXin('2');"><s class="sprite-icon icon-wechat"></s>关注微信</a></li>
+    <li><a href="//dnf.qq.com/act/a20090219dltb/" target="_blank"><s class="sprite-icon icon-light"></s>点亮图标</a></li>
+    <!-- <li><a href="//t.qq.com/dnf" target="_blank"><s class="sprite-icon icon-t"></s>收听微博</a></li> -->
+    <li><a href="//dnf.qq.com/radio" target="_blank"><s class="sprite-icon icon-radio"></s>DNF电台</a></li>
+    <li><a href="//dnf.qq.com/act/a20130814levy/gift.htm" target="_blank"><s class="sprite-icon icon-draw"></s>原画馆</a></li>
+    <li><a href="//xinyue.qq.com/act/a20151016joyclubdnf/index.shtml?ADTAG=dnf.gw" target="_blank"><s class="sprite-icon icon-happy"></s>心悦专区</a></li>
+  </ul>
+  <div class="weixin-tip weixin-t2" id="weixin-tip2">
+	 <div class="weiXinImg"></div>
+	 <a href="javascript:;" onclick="javascript:dnf.hideWeiXin(this);" class="sprite-icon weixin-img-close"></a>
+  </div>
+</div>
+<div class="week-act" id="week-act">
+	<h3 class="tit-line">每周活动</h3>
+	<div class="week-act-list" id="week-act-list">
+		<ul class="week-act-hd">
+			<li>一</li>
+			<li>二</li>
+			<li>三</li>
+			<li>四</li>
+			<li>五</li>
+			<li>六</li>
+			<li>日</li>
+		</ul>
+		<div class="week-act-bd">
+			<ul id="act-con"></ul>
+		</div>
+	</div>
+	<div class="act-links"><a href="javascript:doReg(10931);">订阅最新 <s class="sprite-icon icon-more"></s></a><a href="//dnf.qq.com/act.shtml" target="_blank">活动中心 <s class="sprite-icon icon-more"></s></a></div>
+</div>
+<div class="weixin belong-p">
+  <h3 class="tit-line">DNF官方APP</h3>
+  <div class="weixin-img"><img src="//ossweb-img.qq.com/images/dnf/web2015/weixin.jpg" alt="" /></div>
+  <ul class="weixin-intro" style="display:none">
+    <li>1、打开微信扫一扫</li>
+    <li>2、扫描二维码</li>
+    <li>3、关注DNF官网微信</li>
+  </ul>
+  <div class="weixin-intro-o" style="display:none">官方微信不定期发送专享福利，通过官方微信可下载手机壁纸、完成兑换CDKEY、查询最新活动等等功能</div>
+</div>
+
+<div class="sideGg belong-p" id="sideGg"></div>
+<div class="menu-guide belong-m" id="menu-guide">
+  <ul class="menu-guide-tit" id="menu-guide-tit">
+    <li class="menu-guide-tit-li"><s class="cur-line"></s><a href="#" target="_blank">新手指南</a><s class="icon-arrow sprite-icon"></s></li>
+    <li class="menu-guide-tit-li"><s class="cur-line"></s><a href="#" target="_blank">资料百科</a><s class="icon-arrow sprite-icon"></s></li>
+    <li class="menu-guide-tit-li"><s class="cur-line"></s><a href="#" target="_blank">攻略视频</a><s class="icon-arrow sprite-icon"></s></li>
+    <li class="menu-guide-tit-li"><s class="cur-line"></s><a href="#" target="_blank">自助服务</a><s class="icon-arrow sprite-icon"></s></li>
+  </ul>
+  <div class="menu-guide-list" id="menu-guide-list">
+    <div class="guide-panel">
+      <ul class="s-icon">
+        <li><a href="//dnf.qq.com/act/a20121026gbook/glog.html" target="_blank"><s class="sprite-icon icon-yxdl"></s>游戏登陆</a></li>
+        <li><a href="//dnf.qq.com/act/a20121026gbook/face.html" target="_blank"><s class="sprite-icon icon-yxjm"></s>游戏界面</a></li>
+        <li><a href="//dnf.qq.com/act/a20121026gbook/sys.html" target="_blank"><s class="sprite-icon icon-xtsz"></s>系统设置</a></li>
+        <li><a href="//dnf.qq.com/act/a20121026gbook/jsk.html" target="_blank"><s class="sprite-icon icon-zyjn"></s>职业/技能</a></li>
+        <li><a href="//dnf.qq.com/act/a20121026gbook/jlv.html" target="_blank"><s class="sprite-icon icon-djjy"></s>等级经验</a></li>
+        <li><a href="//dnf.qq.com/act/a20121026gbook/pks.html" target="_blank"><s class="sprite-icon icon-zdxt"></s>战斗系统</a></li>
+        <li><a href="//dnf.qq.com/act/a20121026gbook/task.html" target="_blank"><s class="sprite-icon icon-rwxt"></s>任务系统</a></li>
+        <li><a href="//dnf.qq.com/act/a20121026gbook/dgs.html" target="_blank"><s class="sprite-icon icon-dxc"></s>地下城</a></li>
+        <li><a href="//dnf.qq.com/act/a20121026gbook/gcom.html" target="_blank"><s class="sprite-icon icon-sqxt"></s>社区系统</a></li>
+        <li><a href="//dnf.qq.com/act/a20121026gbook/pet.html" target="_blank"><s class="sprite-icon icon-cw"></s>宠物</a></li>
+        <li><a href="//dnf.qq.com/act/a20121026gbook/wb.html" target="_blank"><s class="sprite-icon icon-scjy"></s>生产/交易</a></li>
+        <li><a href="//dnf.qq.com/act/a20121026gbook/ojob02.html" target="_blank"><s class="sprite-icon icon-fzy"></s>副职业</a></li>
+        <li><a href="//dnf.qq.com/act/a20121026gbook/equ.html" target="_blank"><s class="sprite-icon icon-zb"></s>装备</a></li>
+        <li><a href="//dnf.qq.com/act/a20121026gbook/mall.html" target="_blank"><s class="sprite-icon icon-sc"></s>商城</a></li>
+        <li><a href="//dnf.qq.com/act/a20121026gbook/hplay.html" target="_blank"><s class="sprite-icon icon-tswf"></s>特色玩法</a></li>
+        <li><a href="//dnf.qq.com/act/a20121026gbook/pk.html" target="_blank"><s class="sprite-icon icon-jdc"></s>决斗场</a></li>
+      </ul>
+    </div>
+    <div class="guide-panel">
+      <ul class="s-icon s-icon-bk">
+        <li><a href="//games.qq.com/tencent/dnf/" target="_blank"><s class="sprite-icon icon-gfzlz"></s>官方资料站</a></li>
+        <li><a href="//dnf.17173.com/" target="_blank"><s class="sprite-icon icon-17173"></s>17173资料站</a></li>
+        <li><a href="//dnf.qq.com/web2015/news.shtml?bb" target="_blank"><s class="sprite-icon icon-lsbb"></s>历史版本</a></li>
+        <li><a href="//dnf.qq.com/cp/a20141216comic/index.htm" target="_blank"><s class="sprite-icon icon-mh"></s>漫画</a></li>
+        <li><a href="//pages.book.qq.com/activity/dnf/channel" target="_blank"><s class="sprite-icon icon-xs"></s>小说</a></li>
+        <li><a href="//dnf.qq.com/act/a20140311cg/" target="_blank"><s class="sprite-icon icon-stddh"></s>使徒大动画</a></li>
+        <li><a href="//dnf.qq.com/act/a20121221story/" target="_blank"><s class="sprite-icon icon-aldms"></s>阿拉德秘史</a></li>
+        <li><a href="//dnf.17173.com/zt/music/" target="_blank"><s class="sprite-icon icon-music"></s>音乐</a></li>
+      </ul>
+      <div class="bk-sub-nav">
+        <h4>剧情百科</h4>
+            <p>
+                <a href="//dnfcn.huiji.wiki/index.php?curid=3142" target="_blank">故事大纲</a>
+                <a href="//dnfcn.huiji.wiki/index.php?curid=3055" target="_blank">插曲故事</a>
+                <a href="//dnfcn.huiji.wiki/index.php?curid=3217" target="_blank">版本故事</a>
+                <a href="//dnfcn.huiji.wiki/index.php?curid=552" target="_blank">故事簿</a>
+            </p>
+        <h4>人物百科</h4>
+            <p>
+                <a href="//dnfcn.huiji.wiki/index.php?curid=647" target="_blank">职业设定</a>
+                <a href="//dnfcn.huiji.wiki/index.php?curid=3231" target="_blank">种族介绍</a>
+                <a href="//dnfcn.huiji.wiki/index.php?curid=3053" target="_blank">城镇人物</a>
+                <a href="//dnfcn.huiji.wiki/index.php?curid=3054" target="_blank">剧情人物</a>
+            </p>
+        <h4>背景知识</h4>
+            <p>
+                <a href="//dnfcn.huiji.wiki/index.php?curid=3207" target="_blank">地理划分</a>
+                <a href="//dnfcn.huiji.wiki/index.php?curid=3235" target="_blank">势力介绍</a>
+                <a href="//dnfcn.huiji.wiki/index.php?curid=3234" target="_blank">组织介绍</a>
+				<a href="//dnfcn.huiji.wiki/index.php?curid=3233" target="_blank">区域介绍</a>
+            </p>
+        <h4>游戏设定 </h4>
+            <p>
+                <a href="//dnfcn.huiji.wiki/index.php?curid=3294 " target="_blank">编年史</a>
+                <a href="//dnfcn.huiji.wiki/index.php?curid=3208" target="_blank">重要事件</a>
+				<a href="//dnfcn.huiji.wiki/index.php?curid=3062" target="_blank">游戏术语</a>
+            </p>
+			<div class="guide-panel-more"><a href="//dnfcn.huiji.wiki/wiki/%E9%A6%96%E9%A1%B5" target="_blank">更多 <s class="sprite-icon icon-more" style="top:4px;display:inline-block"></s></a></div>
+      </div>
+
+    </div>
+    <div class="guide-panel">
+		<div class="bk-sub-nav bk-sub-nav-video">
+			<h4>职业攻略</h4>
+        <p>
+          <a href="//dnf.qq.com/webplat/info/news_version3/119/26208/26209/m17081/list_1.shtml" target="_blank">鬼剑士</a>
+          <a href="//dnf.qq.com/webplat/info/news_version3/119/26208/26216/m17081/list_1.shtml" target="_blank">格斗家（女）</a>
+          <a href="//dnf.qq.com/webplat/info/news_version3/119/26208/26213/m17081/list_1.shtml" target="_blank">神枪手</a>
+          <a href="//dnf.qq.com/webplat/info/news_version3/119/26208/26211/m17081/list_1.shtml" target="_blank">魔法师（女）</a>
+          <a href="//dnf.qq.com/webplat/info/news_version3/119/26208/26219/m17081/list_1.shtml" target="_blank">圣职者</a>
+          <a href="//dnf.qq.com/webplat/info/news_version3/119/26208/26214/m17081/list_1.shtml" target="_blank">女枪手</a>
+          <a href="//dnf.qq.com/webplat/info/news_version3/119/26208/26217/m17081/list_1.shtml" target="_blank">暗夜使者</a>
+          <a href="//dnf.qq.com/webplat/info/news_version3/119/26208/26222/m17081/list_1.shtml" target="_blank">缔造者</a>
+          <a href="//dnf.qq.com/webplat/info/news_version3/119/26208/26210/m17081/list_1.shtml" target="_blank">鬼剑士（女）</a>
+          <a href="//dnf.qq.com/webplat/info/news_version3/119/26208/26220/m17081/list_1.shtml" target="_blank">守护者</a>
+          <a href="//dnf.qq.com/webplat/info/news_version3/119/26208/26215/m17081/list_1.shtml" target="_blank">格斗家（男）</a>
+          <a href="//dnf.qq.com/webplat/info/news_version3/119/26208/26212/m17081/list_1.shtml" target="_blank">男法师</a>
+          <a href="//dnf.qq.com/webplat/info/news_version3/119/26208/26221/m17081/list_1.shtml" target="_blank">黑暗武士</a>
+        </p>
+      <h4>地下城攻略</h4>
+        <p>
+          <a href="//dnf.qq.com/cp/a20131105strategy/index.shtml" target="_blank">异界地下城</a>
+          <a href="//dnf.qq.com/cp/a20130809zhq/index.htm" target="_blank">远古镇魂曲</a>
+          <a href="//dnf.qq.com/act/a20141224bzate/" target="_blank">安徒恩地下城</a>
+          <a href="//dnf.qq.com/cp/a20140829ywzd/" target="_blank">遗忘之地</a>
+          <a href="//dnf.qq.com/act/chapter4.24/page1.shtml" target="_blank">守护者祭坛</a>
+          <a href="//dnf.qq.com/act/chapter13/" target="_blank">无尽的祭坛</a>
+          <a href="//dnf.qq.com/act/a20121026gbook/hplay03.html" target="_blank">绝望之塔</a>
+          <a href="//dnf.qq.com/act/a20121026gbook/hplay04.html" target="_blank">领主之塔</a>
+          <a href="//dnf.qq.com/cp/a20140106mzhd/index.shtml" target="_blank">每周活动（格兰之森山麓）</a>
+        </p>
+      <h4>明星主播</h4>
+        <p>
+          <a href="//star.longzhu.com/103463" target="_blank">兔子</a>
+          <a href="//star.longzhu.com/10344" target="_blank">饺子</a>
+          <a href="//star.longzhu.com/588" target="_blank">凤凰羽</a>
+          <a href="//star.longzhu.com/619" target="_blank">海因</a>
+        </p>
+		  </div>
+		  <ul class="bk-sub-nav-video-btn">
+			<li><a href="//dnf.qq.com/v/search.shtml?iType=62"><s class="sprite-icon icon-video-btn"></s>职业视频</a></li>
+			<li><a href="//dnf.qq.com/v/search.shtml?iType=63"><s class="sprite-icon icon-video-btn"></s>赛事视频</a></li>
+			<li><a href="//dnf.qq.com/v/search.shtml?iType=60"><s class="sprite-icon icon-video-btn"></s>官方视频</a></li>
+		  </ul>
+    </div>
+    <div class="guide-panel">
+      <ul class="s-icon s-icon-bk">
+        <li><a href="//dnf.qq.com/comm-htdocs/pay/new_index.htm?t=dnf" target="_blank"><s class="sprite-icon icon-cz"></s>充值</a></li>
+        <li><a href="//tgp.qq.com/dnf.shtml" target="_blank"><s class="sprite-icon icon-tgp"></s>TGP助手</a></li>
+        <li><a href="//dnf.duowan.com/s/jnmn/gjs.html" target="_blank"><s class="sprite-icon icon-jdmnq"></s>加点模拟器</a></li>
+        <li><a href="//dnf.qq.com/cp/a20130822tyf/" target="_blank"><s class="sprite-icon icon-tyf"></s>体验服</a></li>
+        <li><a href="//bang.qq.com/gl/tool/6249" target="_blank"><s class="sprite-icon icon-bzcxq"></s>宝珠查询器</a></li>
+        <li><a href="//youxi.vip.qq.com/game/style/dnf3.html" target="_blank"><s class="sprite-icon icon-txzb"></s>头像装扮</a></li>
+        <li><a href="//bang.qq.com/gl/zhuanlan/tool/dnf" target="_blank"><s class="sprite-icon icon-qyzs"></s>自助工具</a></li>
+      </ul>
+      <div class="bk-sub-nav">
+        <h4>安全中心</h4>
+            <p>
+                <a href="//dnf.qq.com/cp/a20130828nwzc/index.htm" target="_blank">女王的制裁</a>
+                <a href="//kf.qq.com/game/limit_records.html?code=dnf" target="_blank">封号查询</a>
+                <a href="//kf.qq.com/game/dnf_fenghao_shensu.html" target="_blank">封号申诉</a>
+                <a href="//kf.qq.com/game/dnfwgprop_resume.html" target="_blank">违规举报</a>
+                <a href="//kf.qq.com/game/business.html?code=dnf" target="_blank">被盗找回</a>
+                <a href="//helper.qq.com/v2/pages/tools/role-retrieve-dnf.shtml?gid=dnf&cid=89" target="_blank">角色恢复</a>
+                <a href="//helper.qq.com/v2/pages/tools/clear-pwd.shtml?gid=dnf&cid=67" target="_blank">二级密码清除</a>
+                <a href="//aq.qq.com/cn2/manage/mbtoken/app_privilege?source_id=2425" target="_blank">密保特权</a>
+                <a href="//dnf.qq.com/act/a20100406safety/" target="_blank">安全模式</a>
+            </p>
+        <h4>自助服务</h4>
+            <p>
+                <a href="//dnf.qq.com/comm-htdocs/pay/new_index.htm?t=dnf" target="_blank">充值</a>
+                <a href="//helper.qq.com/v2/pages/search/bill-query.shtml?gid=dnf&cid=86" target="_blank">消费记录</a>
+                <a href="//helper.qq.com/v2/pages/tools/allrole-query.shtml?gid=dnf&cid=115" target="_blank">角色查询</a>
+                <a href="//dnf.qq.com/act/a20090219dltb/" target="_blank">点亮图标</a>
+                <a href="//dnf.qq.com/web2013/cdkey.shtml" target="_blank">兑换CDKEY</a>
+                <a href="//dnf.qq.com/act/a20140504team/" target="_blank">预约组队</a>
+            </p>
+        <h4>客服中心</h4>
+            <p>
+                <a href="//crm2.qq.com/page/portalpage/wpa.php?uin=40012345&f=1&ty=1&ap=000011:400994:|m:11|f:Gdnf1" target="_blank">QQ在线客服 </a>
+                <a href="//bang.qq.com/wenda/index/dnf" target="_blank">问答</a>
+            </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="shop-push belong-m">
+  <h3 class="tit-line">道聚城推荐</h3>
+  <div class="shop-rotatebox" id="shop-tab">
+    <div class="shop-bd" id="shop-list"></div>
+    <div class="shop-hd">
+      <ul>
+        <li class="shop-hd-i"></li>
+        <li class="shop-hd-i"></li>
+        <li class="shop-hd-i"></li>
+        <li class="shop-hd-i"></li>
+      </ul>
+    </div>
+  </div>
+  <div class="shop-more"><a href="//daoju.qq.com/dnf?ADTAG=gwtj.rec.dnf" target="_blank">更多优惠道具 ></a></div>
+</div>
+<div class="teamwork belong-m">
+  <div class="teamwork-select" id="teamwork-select">
+    <h3>合作媒体网站<s class="sprite-icon icon-teamwork"></s></h3>
+    <ul class="teamwork-list">
+      <li><a target="_blank" href="//book.qq.com/index.html?g_f=70058">腾讯文学</a></li>
+      <li><a target="_blank" href="//games.qq.com/tencent/dnf">腾讯DNF资料站</a></li>
+      <li><a target="_blank" href="//dnf.17173.com">17173游戏专区</a></li>
+      <li><a target="_blank" href="//dnf.duowan.com">多玩游戏专区</a></li>
+      <li><a target="_blank" href="//dnf.766.com">766游戏专区</a></li>
+      <li><a target="_blank" href="//dnf.uuu9.com">游久网游戏专区</a></li>
+      <li><a target="_blank" href="//dnf.pcgames.com.cn/">太平洋游戏网专区</a></li>
+      <li><a target="_blank" href="//dnf.tgbus.com/">电玩巴士游戏专区</a></li>
+      <li><a target="_blank" href="//dnf.52pk.com/">地下城与勇士52pk</a></li>
+      <li><a target="_blank" href="//v.qq.com/games/list/502_50201/627_0_0/1_0.html">腾讯视频游戏专区</a></li>
+      <li><a target="_blank" href="//play.163.com/dnf/">爱玩网专区</a></li>
+      <li><a target="_blank" href=" //www.aipai.com/game_gameid-1063.html">爱拍游戏专区</a></li>
+      <li><a target="_blank" href="//games.sina.com.cn/o/z/dnf/index.shtml">新浪网游戏专区</a></li>
+      <li><a target="_blank" href="//dnf.178.com">178</a></li>
+      <li><a target="_blank" href="//www.zhangyoubao.com/index-dnf.html">掌游宝</a></li>
+<li><a target="_blank" href="//dnf.tuwan.com/">兔玩网游戏专区</a></li>
+    </ul>
+  </div>
+  <div class="teamwork-img">
+    <h3>合作伙伴</h3>
+    <p><a href="#" class="sprite-icon icon-bank"></a></p>
+  </div>
+</div>
+<!--[if !IE]>|xGv00|62093b5d99a38fd33abe3d0f32d4b14b<![endif]-->
+			</div>
+		</div>
+	</div>
+	<div class="top">
+	<ul>
+		<li><a href="javascript:dnf.scroller.init('wrap',800);" class="sprite-icon icon-top">TOP</a></li>
+		<!-- <li><a href="#" class="sprite-icon icon-edit">edit</a></li> -->
+	</ul>
+</div><!--[if !IE]>|xGv00|ff42609feca159766a3e8854dfd0b2fc<![endif]-->
+</div>
+<div class="footer">
+	<div class="f-infos">
+<p class="tencent-game sprite-bg"><a class="tg" title="腾讯互动娱乐" target="_blank" href="//ieg.tencent.com/">腾讯互动娱乐</a></p>
+<p><a target="_blank" href="//game.qq.com/portal2010/about.htm">关于腾讯游戏</a><span>|</span><a target="_blank" href="//game.qq.com/contract.shtml">服务条款</a><span>|</span><a target="_blank" href="//adver.qq.com/">广告服务</a><span>|</span><a target="_blank" href="//game.qq.com/hr/">腾讯游戏招聘</a><span>|</span><a target="_blank" href="//service.qq.com/">腾讯游戏客服</a><span>|</span><a target="_blank" href="//game.qq.com/gnav/">腾讯游戏地图</a><span>|</span><a target="_blank" href="//tgact.qq.com/">腾讯游戏活动</a><span>|</span><a target="_blank" href="//game.qq.com/portal2010/business.htm">商务合作</a><span>|</span><a target="_blank" href="//www.qq.com">腾讯网</a><span>|</span><a target="_blank" href="//www.qq.com/map/">网站导航</a></p>
+<p class="e">COPYRIGHT &copy; 1998 &ndash; 2017 TENCENT. ALL RIGHTS RESERVED.</p>
+<p class="r"><a target="_blank" href="//www.tencent.com/law/mo_law.shtml?/law/copyright.htm">腾讯公司版权所有</a></p>
+<p class="copyright">COPYRIGHT &copy; 2017 NEOPLE.INC., ALL RIGHTS RESERVED.</p>
+<p class="license">文网进字[2014]034号<em><a target="_blank" href="//game.qq.com/culture2.htm">新出网证（粤）字010号</a></em><em>ISBN 978-7-89988-060-9</em><em><a target="_blank" href="//game.qq.com/culture.htm">粤网文[2014]0633-233号</a></em><em>新广出审[2014]952号</em></p>
+<p style="margin:5px 0 0 0;">抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活</p>
+<p style="margin:5px 0 0 0;">本网络游戏适合年满13周岁以上的用户使用；请您确定如实进行实名注册；为了您的健康，请合理控制游戏时间。</p>
+</div><!--[if !IE]>|xGv00|1ff4dcc6cd7f72a172e30c1c3968996c<![endif]-->
+</div>
+<script src="/web2015/js/page.js"></script>
+</body>
+</html>
