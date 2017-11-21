@@ -390,7 +390,7 @@ a:hover s.uico47 {background-position:-510px -2px;}
 				  <li><a href="//crm2.qq.com/page/portalpage/wpa.php?uin=40012345&f=1&ty=1&ap=000011:400994:|m:11|f:Gdnf7" target="_blank"><s class="sprite-icon icon-online"></s>在线客服</a></li>
 				  <li><a href="//dnf.qq.com/act/a20110523safe/" target="_blank"><s class="sprite-icon icon-safe"></s>安全中心</a></li>
 				  <li><a href="//dnfcity.qq.com/" target="_blank"><s class="sprite-icon icon-shop"></s>周边商城</a></li>
-				
+
 				</ul>
 				<!-- add by sonic 2016-03-29 -->
 				<div class="weixin-tip weixin-t3" id="weixin-tip3">
@@ -431,7 +431,7 @@ a:hover s.uico47 {background-position:-510px -2px;}
 					<li>日</li>
 				  </ul>
 				</div>
-				
+
 			  </div>
 			</div>
 		  </div>
@@ -439,6 +439,16 @@ a:hover s.uico47 {background-position:-510px -2px;}
 	  </div>
 	</div>
 	<div>威震天我CNM</div>
+	<div id="demo"></div>
 	<img src="pic1.png"/>
+<script>
+window.onload = show;
+var time;
+function show() {
+	document.getElementById("demo").innerHTML = Date();
+	time = setTimeout("show()", 1);
+}
+</script>
+
   </body>
 </html>
