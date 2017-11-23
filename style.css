@@ -1,12 +1,13 @@
 @charset utf-8
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,p,th,td,s{margin:0;padding:0;font-family:"微软雅黑",Tahoma,sans-serif}
 table{border-collapse:collapse;border-spacing:0}
+
 fieldset,img{border:0}
 th,em,b{font-style:normal;font-weight:normal}
 ul,ol,s{list-style:none}
 caption,th{text-align:left}
 h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
-body{padding-top:42px;font-size:12px}
+body{padding-top:42px;font-size:12px;background: #f0ff20}
 a{text-decoration:none}
 a:hover{text-decoration:none}
 table{border-collapse:collapse;border-spacing:0;empty-cells:show}
@@ -110,7 +111,7 @@ img{border:0}
 .modle-enter a:hover .icon-service{background-position:-223px -33px}
 
 
-.main{padding-left:200px}
+.main{padding-left:200px;background:#F0FF00}
 .icon-tit{display:inline-block;width:22px;height:22px;background-position:-297px -71px;margin-right:12px}
 .nav-fixed{width:50px;background-color:#282725;position:fixed;left:0;top:0;height:100%}
 .nav-fixed ul{padding:0 13px 0 13px;position:absolute;height:495px;top:50%;margin-top:-247px}
@@ -177,7 +178,7 @@ img{border:0}
 .main-menu-list .main-menu-list-o5{margin-right:60px}
 .main-menu-list a{color:#aeaeae}
 
-/*  |xGv00|262e294c7eb0a2ccb2f52c5b1478f014 */.page-news{background-color:#fff;width:730px;margin:0 0 0 30px;padding:0 50px 0 50px;min-height:1550px;}
+/*  |xGv00|262e294c7eb0a2ccb2f52c5b1478f014 */.page-news{background-color:#f0ff00;width:730px;margin:0 0 0 30px;padding:0 50px 0 50px;min-height:1550px;}
 .page-news-top{padding:38px 0 33px 0;position:relative;}
 .position{position:absolute;right:0;top:47px;color:#333333;}
 .position a{color:#333333;}
@@ -223,7 +224,7 @@ img{border:0}
 .dnf-head{width:132px;height:132px;float:left;}
 .dnf-intro p{line-height:25px;padding:15px 0 0 152px;}
 .icon-tit-wallpaper{display:inline-block;width:149px;height:21px;background-position:-368px -172px;}
-..act-content{background-color:#fff;width:920px;margin:0 auto;padding:0 70px;}
+..act-content{background-color:#f0ff00;width:920px;margin:0 auto;padding:0 70px;}
 .act-list{position:relative;}
 .act-list-hd{border-left:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
 .act-list-hd li{display:inline-block;border-top:1px solid #e8e8e8;border-right:1px solid #e8e8e8;position:relative;}
