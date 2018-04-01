@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<style type="text/css">
+	 
+    
+}
+</style>
+  </head>
+  <body>
+	<div id="time"></div> 
+	<div class="pic">
+	  <img src="flandre1.jpg"/>
+	  <img src="flandre2.jpg"/>
+
+
+	  <img src="remilia1.jpg"/>
+	  <img src="pic3.jpeg"/></div>
+	
+  </body>
+<script>
+window.onload = show;
+var time;
+function show() {
+	document.getElementById("time").innerHTML = Date();
+	time = setTimeout("show()", 1000);
+}
+</script>
+</html>
