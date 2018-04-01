@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<style type="text/css">
+	
+
+</style>
+  </head>
+  <body>
+	<div id="time"></div> 
+	<div><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=22636685&auto=0&height=66"></iframe></div>
+	<div><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=22636710&auto=0&height=66"></iframe></div>
+  </body>
+<script>
+window.onload = show;
+var time;
+function show() {
+	document.getElementById("time").innerHTML = Date();
+	time = setTimeout("show()", 1000);
+}
+</script>
+</html>
