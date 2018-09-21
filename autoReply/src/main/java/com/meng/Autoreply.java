@@ -39,7 +39,8 @@ import com.sobte.cqp.jcq.message.CoolQCode;
  * 酷Q核心操作类}), {@link JcqAppAbstract#CC CC}(
  * {@link com.sobte.cqp.jcq.message.CQCode 酷Q码操作类}), 具体功能可以查看文档
  */
-public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest {
+public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest
+{
 
 	private String lastKey = "";
 	public static boolean enable = true;
@@ -56,7 +57,8 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 * @param args
 	 *            系统参数
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		// CQ此变量为特殊变量，在JCQ启动时实例化赋值给每个插件，而在测试中可以用CQDebug类来代替他
 		CQ = new CQDebug();// new CQDebug("应用目录","应用名称") 可以用此构造器初始化应用的目录
 		CQ.logInfo("[JCQ] TEST Demo", "测试启动");// 现在就可以用CQ变量来执行任何想要的操作了
@@ -91,7 +93,8 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 *
 	 * @return 返回应用的ApiVer、Appid
 	 */
-	public String appInfo() {
+	public String appInfo()
+	{
 		// 应用AppID,规则见 http://d.cqp.me/Pro/开发/基础信息#appid
 		String AppID = "com.meng.autoreply";// 记住编译后的文件和json也要使用appid做文件名
 		/**
@@ -108,7 +111,8 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 *
 	 * @return 请固定返回0
 	 */
-	public int startup() {
+	public int startup()
+	{
 		// 获取应用数据目录(无需储存数据时，请将此行注释)
 		appDirectory = CQ.getAppDirectory();
 		addGroupDic(appDirectory);
@@ -128,7 +132,8 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 *
 	 * @return 请固定返回0，返回后酷Q将很快关闭，请不要再通过线程等方式执行其他代码。
 	 */
-	public int exit() {
+	public int exit()
+	{
 		return 0;
 	}
 
@@ -141,7 +146,8 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 *
 	 * @return 请固定返回0。
 	 */
-	public int enable() {
+	public int enable()
+	{
 		enable = true;
 		return 0;
 	}
@@ -154,7 +160,8 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 *
 	 * @return 请固定返回0。
 	 */
-	public int disable() {
+	public int disable()
+	{
 		enable = false;
 		return 0;
 	}
@@ -180,19 +187,23 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 *         如果不回复消息，交由之后的应用/过滤器处理，这里 返回 {@link IMsg#MSG_IGNORE MSG_IGNORE} -
 	 *         忽略本条消息
 	 */
-	public int privateMsg(int subType, int msgId, long fromQQ, String msg, int font) {
+	public int privateMsg(int subType, int msgId, long fromQQ, String msg, int font)
+	{
 		// 这里处理消息
 
 		CQ.sendPrivateMsg(fromQQ, "类型" + subType + "\n内容：" + msg + "\nID：" + msgId + "\n字体：" + font);
 		String[] strings = msg.split("\\.");
 
-		if (strings[0].equalsIgnoreCase("live")) {
+		if (strings[0].equalsIgnoreCase("live"))
+		{
 			boolean b = false;
-			for (int i = 0; i < lCheckV2.getMapFlag(); i++) {
+			for (int i = 0; i < lCheckV2.getMapFlag(); i++)
+			{
 				sendMsg(lCheckV2.getPerson(i), Long.parseLong(strings[1]));
 				b = b || lCheckV2.getPerson(i).isLiving();
 			}
-			if (!b) {
+			if (!b)
+			{
 				sendGroupMessage(Long.parseLong(strings[1]), "惊了 居然没有飞机佬直播");
 			}
 		}
@@ -220,9 +231,11 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 * @return 关于返回值说明, 见 {@link #privateMsg 私聊消息} 的方法
 	 */
 	public int groupMsg(int subType, int msgId, long fromGroup, long fromQQ, String fromAnonymous, String msg,
-			int font) {
+						int font)
+	{
 		// 如果消息来自匿名者
-		if (fromQQ == 80000000L && !fromAnonymous.equals("")) {
+		if (fromQQ == 80000000L && !fromAnonymous.equals(""))
+		{
 			// 将匿名用户信息放到 anonymous 变量中
 			Anonymous anonymous = CQ.getAnonymous(fromAnonymous);
 		}
@@ -244,112 +257,151 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 		// JsonArray array = obj.getAsJsonArray(msg);
 
 		System.out.println(msg);
-		if (CC.getAt(msg) == 1620628713L) {
-			if (fromQQ == 2856986197L) {
+		if (CC.getAt(msg) == 1620628713L)
+		{
+			if (fromQQ == 2856986197L)
+			{
 				sendGroupMessage(fromGroup, CC.at(fromQQ) + "找姐姐什么事？");
-			} else {
-				switch (random.nextInt(3)) {
-				case 0:
-					sendGroupMessage(fromGroup, CC.at(fromQQ) + "找姐姐什么事？");
-					break;
-				case 1:
-					sendGroupMessage(fromGroup, "我被猪@了");
-					break;
-				case 2:
-					sendGroupMessage(fromGroup, "干啥");
-					break;
+			}
+			else
+			{
+				switch (random.nextInt(3))
+				{
+					case 0:
+						sendGroupMessage(fromGroup, CC.at(fromQQ) + "找姐姐什么事？");
+						break;
+					case 1:
+						sendGroupMessage(fromGroup, "我被猪@了");
+						break;
+					case 2:
+						sendGroupMessage(fromGroup, "干啥");
+						break;
 				}
 			}
 		}
-		if (msg.equals(".stop")) {
+		if (msg.equals(".stop"))
+		{
 			sendGroupMessage(fromGroup, "disabled");
 			enable = false;
 		}
-		if (msg.equals(".start")) {
+		if (msg.equals(".start"))
+		{
 			enable = true;
 			sendGroupMessage(fromGroup, "enabled");
 		}
-		
+
 		String[] stri = msg.split("\\.");
-		if (stri[0].equalsIgnoreCase("qd")) {
-			System.out.println("qd"+Long.parseLong(stri[1]));
+		if (stri[0].equalsIgnoreCase("qd"))
+		{
+			System.out.println("qd" + Long.parseLong(stri[1]));
 			CQ.sendGroupMsg(Long.parseLong(stri[1]), "[CQ:sign,title=每天都想你很多遍,image=http://pub.idqqimg.com/pc/misc/files/20170509/f6067662d75947e582da079a2dd96a91.jpg]");
 		}
-		
-		if (msg.equals(".live")) {
+
+		if (msg.equals(".live"))
+		{
 			boolean b = false;
-			for (int i = 0; i < lCheckV2.getMapFlag(); i++) {
+			for (int i = 0; i < lCheckV2.getMapFlag(); i++)
+			{
 				sendMsg(lCheckV2.getPerson(i), fromGroup);
 				b = b || lCheckV2.getPerson(i).isLiving();
 			}
-			if (b) {
+			if (b)
+			{
 				sendGroupMessage(fromGroup, "消息发送完毕");
-			} else {
+			}
+			else
+			{
 				sendGroupMessage(fromGroup, "惊了 居然没有飞机佬直播");
 			}
 		}
 
-		if (Pattern.matches(".*[蓝|藍][椰|叶|葉][椰|叶|葉].*", msg.replace(" ", "").trim())) {
+		if (Pattern.matches(".*[蓝|藍][椰|叶|葉][椰|叶|葉].*", msg.replace(" ", "").trim()))
+		{
 			sendGroupMessage(fromGroup, "打不过地灵殿Normal");
-			try {
+			try
+			{
 				sendGroupMessage(fromGroup, CC.image(new File(appDirectory + "a.jpg")));
-			} catch (IOException e) {
+			}
+			catch (IOException e)
+			{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return MSG_IGNORE;
 		}	
-		if (Pattern.matches(".*大[鸽|鴿]迫害[图|圖].*", msg.replace(" ", "").trim())) {
-			try {
+		if (Pattern.matches(".*大[鸽|鴿]迫害[图|圖].*", msg.replace(" ", "").trim()))
+		{
+			try
+			{
 				sendGroupMessage(fromGroup, CC.image(new File(appDirectory + "05.jpg")));
-			} catch (IOException e) {
+			}
+			catch (IOException e)
+			{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			return MSG_IGNORE;
-		}
-		
-		if (Pattern.matches(".*(复读|復讀|人类的本质|人類的本質).*", msg.replace(" ", "").trim())) {
-			try {
-				sendGroupMessage(fromGroup, CC.image(new File(appDirectory + "fudu.jpg")));
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return MSG_IGNORE;
-		}
-		
-		if (banner.checkBan(fromQQ, fromGroup, msg)) {
-			return MSG_IGNORE;
-		}
-		if (recoderManager.check(fromGroup, msg, CC)) {
-			return MSG_IGNORE;
-		}
-		if (dicReplyManager.check(fromGroup, msg)) {
 			return MSG_IGNORE;
 		}
 
-		if (fromGroup == 859561731L || fromGroup == 826536230L) {
+		if (Pattern.matches(".*(复读|復讀|人类的本质|人類的本質).*", msg.replace(" ", "").trim()))
+		{
+			try
+			{
+				sendGroupMessage(fromGroup, CC.image(new File(appDirectory + "fudu.jpg")));
+			}
+			catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return MSG_IGNORE;
+		}
+
+		if (banner.checkBan(fromQQ, fromGroup, msg))
+		{
+			return MSG_IGNORE;
+		}
+		if (recoderManager.check(fromGroup, msg, CC))
+		{
+			return MSG_IGNORE;
+		}
+		if (dicReplyManager.check(fromGroup, msg))
+		{
+			return MSG_IGNORE;
+		}
+
+		if (fromGroup == 859561731L || fromGroup == 826536230L)
+		{
 			// if (fromGroup != 210341365L) {
 			// if(true){
-			if ("大妖精".equals(msg.replace(" ", "").trim())) {
+			if ("大妖精".equals(msg.replace(" ", "").trim()))
+			{
 				String[] strings = new String[] { "封魔录", "梦时空", "幻想乡", "怪绮谈", "红", "妖", "永", "花", "风", "殿", "船", "庙",
-						"城", "绀", "璋", "大战争" };
-				if (fromQQ == 2856986197L) {
+					"城", "绀", "璋", "大战争" };
+				if (fromQQ == 2856986197L)
+				{
 					sendGroupMessage(fromGroup, CC.at(3427665460L) + "你已经是群萌新了，快打个"
-							+ strings[random.nextInt(strings.length)] + "LNN给群友们看看吧");
-				} else {
+									 + strings[random.nextInt(strings.length)] + "LNN给群友们看看吧");
+				}
+				else
+				{
 					sendGroupMessage(fromGroup,
-							CC.at(fromQQ) + "你已经是群萌新了，快打个" + strings[random.nextInt(strings.length)] + "LNN给群友们看看吧");
+									 CC.at(fromQQ) + "你已经是群萌新了，快打个" + strings[random.nextInt(strings.length)] + "LNN给群友们看看吧");
 				}
 			}
-			if ("狐狸".equals(msg.replace(" ", "").trim())) {
+			if ("狐狸".equals(msg.replace(" ", "").trim()))
+			{
 				String[] strings = new String[] { "摸摸", "蹭蹭", "挠挠", "抱抱" };
-				if (fromQQ == 2856986197L) {
+				if (fromQQ == 2856986197L)
+				{
 					sendGroupMessage(fromGroup, CC.at(2539234928L) + strings[random.nextInt(strings.length)]);
-				} else if (fromQQ == 2539234928L) {
+				}
+				else if (fromQQ == 2539234928L)
+				{
 					sendGroupMessage(fromGroup, "你摸你自己");
-				} else {
+				}
+				else
+				{
 					sendGroupMessage(fromGroup, CC.at(fromQQ) + "你已经是群萌新了，快当个RBQ群友们用用吧");
 				}
 			}
@@ -377,7 +429,8 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 *            字体
 	 * @return 关于返回值说明, 见 {@link #privateMsg 私聊消息} 的方法
 	 */
-	public int discussMsg(int subtype, int msgId, long fromDiscuss, long fromQQ, String msg, int font) {
+	public int discussMsg(int subtype, int msgId, long fromDiscuss, long fromQQ, String msg, int font)
+	{
 		// 这里处理消息
 
 		return MSG_IGNORE;
@@ -399,9 +452,11 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 *            上传文件信息
 	 * @return 关于返回值说明, 见 {@link #privateMsg 私聊消息} 的方法
 	 */
-	public int groupUpload(int subType, int sendTime, long fromGroup, long fromQQ, String file) {
+	public int groupUpload(int subType, int sendTime, long fromGroup, long fromQQ, String file)
+	{
 		GroupFile groupFile = CQ.getGroupFile(file);
-		if (groupFile == null) { // 解析群文件信息，如果失败直接忽略该消息
+		if (groupFile == null)
+		{ // 解析群文件信息，如果失败直接忽略该消息
 			return MSG_IGNORE;
 		}
 		// 这里处理消息
@@ -423,11 +478,15 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 *            被操作QQ
 	 * @return 关于返回值说明, 见 {@link #privateMsg 私聊消息} 的方法
 	 */
-	public int groupAdmin(int subtype, int sendTime, long fromGroup, long beingOperateQQ) {
+	public int groupAdmin(int subtype, int sendTime, long fromGroup, long beingOperateQQ)
+	{
 		// 这里处理消息
-		if (subtype == 1) {
+		if (subtype == 1)
+		{
 			sendGroupMessage(fromGroup, CC.at(beingOperateQQ) + "你绿帽子没莉");
-		} else if (subtype == 2) {
+		}
+		else if (subtype == 2)
+		{
 			sendGroupMessage(fromGroup, CC.at(beingOperateQQ) + "群主给了你个绿帽子");
 		}
 		return MSG_IGNORE;
@@ -449,11 +508,15 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 *            被操作QQ
 	 * @return 关于返回值说明, 见 {@link #privateMsg 私聊消息} 的方法
 	 */
-	public int groupMemberDecrease(int subtype, int sendTime, long fromGroup, long fromQQ, long beingOperateQQ) {
+	public int groupMemberDecrease(int subtype, int sendTime, long fromGroup, long fromQQ, long beingOperateQQ)
+	{
 		// 这里处理消息
-		if (subtype == 1) {
+		if (subtype == 1)
+		{
 			sendGroupMessage(fromGroup, beingOperateQQ + "跑莉");
-		} else if (subtype == 2) {
+		}
+		else if (subtype == 2)
+		{
 			sendGroupMessage(fromGroup, beingOperateQQ + "被玩完扔莉");
 		}
 		return MSG_IGNORE;
@@ -475,12 +538,13 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 *            被操作QQ(即加群的QQ)
 	 * @return 关于返回值说明, 见 {@link #privateMsg 私聊消息} 的方法
 	 */
-	public int groupMemberIncrease(int subtype, int sendTime, long fromGroup, long fromQQ, long beingOperateQQ) {
+	public int groupMemberIncrease(int subtype, int sendTime, long fromGroup, long fromQQ, long beingOperateQQ)
+	{
 		// 这里处理消息
 		String[] strings = new String[] { "封魔录", "梦时空", "幻想乡", "怪绮谈", "红", "妖", "永", "花", "风", "殿", "船", "庙", "城", "绀",
-				"璋", "大战争", };
+			"璋", "大战争", };
 		sendGroupMessage(fromGroup,
-				CC.at(beingOperateQQ) + "你已经是群萌新了，快打个" + strings[random.nextInt(strings.length)] + "LNN给群友们看看吧");
+						 CC.at(beingOperateQQ) + "你已经是群萌新了，快打个" + strings[random.nextInt(strings.length)] + "LNN给群友们看看吧");
 		return MSG_IGNORE;
 	}
 
@@ -496,7 +560,8 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 *            来源QQ
 	 * @return 关于返回值说明, 见 {@link #privateMsg 私聊消息} 的方法
 	 */
-	public int friendAdd(int subtype, int sendTime, long fromQQ) {
+	public int friendAdd(int subtype, int sendTime, long fromQQ)
+	{
 		// 这里处理消息
 
 		return MSG_IGNORE;
@@ -518,7 +583,8 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 *            反馈标识(处理请求用)
 	 * @return 关于返回值说明, 见 {@link #privateMsg 私聊消息} 的方法
 	 */
-	public int requestAddFriend(int subtype, int sendTime, long fromQQ, String msg, String responseFlag) {
+	public int requestAddFriend(int subtype, int sendTime, long fromQQ, String msg, String responseFlag)
+	{
 		// 这里处理消息
 
 		/**
@@ -549,7 +615,8 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 * @return 关于返回值说明, 见 {@link #privateMsg 私聊消息} 的方法
 	 */
 	public int requestAddGroup(int subtype, int sendTime, long fromGroup, long fromQQ, String msg,
-			String responseFlag) {
+							   String responseFlag)
+	{
 		// 这里处理消息
 
 		/**
@@ -561,7 +628,8 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 		 * CQ.setGroupAddRequest(responseFlag, REQUEST_GROUP_ADD, REQUEST_ADOPT,
 		 * null);// 同意入群 }
 		 */
-		if (subtype == 2) {
+		if (subtype == 2)
+		{
 			CQ.setGroupAddRequest(responseFlag, REQUEST_GROUP_INVITE, REQUEST_ADOPT, null);// 同意进受邀群
 		}
 
@@ -573,7 +641,8 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 *
 	 * @return 固定返回0
 	 */
-	public int menuA() {
+	public int menuA()
+	{
 		JOptionPane.showMessageDialog(null, "这是测试菜单A，可以在这里加载窗口");
 		return 0;
 	}
@@ -583,32 +652,49 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 	 *
 	 * @return 固定返回0
 	 */
-	public int menuB() {
+	public int menuB()
+	{
 		JOptionPane.showMessageDialog(null, "这是测试菜单B，可以在这里加载窗口");
 		return 0;
 	}
 
-	public static void sendGroupMessage(long group, String msg) {
-		if (enable) {
-			CQ.sendGroupMsg(group, msg);
+	public static void sendGroupMessage(long group, String msg)
+	{
+		if (enable)
+		{
+
+			if (msg.startWith("image:"))
+			{
+				String[] stri = msg.split("\\:");
+				CQ.sendGroupMsg(group, CC.image(new File(appDirectory +"pohai"+ stri[1])));
+			}
+			else
+			{
+				CQ.sendGroupMsg(group, msg);
+			}
+
 		}
 	}
 
-	private void sendMsg(LivingPerson p, long group) {
-		if (p.isLiving()) {
+	private void sendMsg(LivingPerson p, long group)
+	{
+		if (p.isLiving())
+		{
 			String tmp = p.getName() + "直播开始啦大家快去奶" + p.getLiveUrl();
 			Autoreply.sendGroupMessage(group, tmp);
 			p.setNeedStartTip(true);
 		}
 	}
 
-	private void addGroupDic(String appDirectory) {
+	private void addGroupDic(String appDirectory)
+	{
 		dicReplyManager.addData(new DicReplyGroup(826536230L, appDirectory + "dic826536230.json"));
 		dicReplyManager.addData(new DicReplyGroup(859561731L, appDirectory + "dic859561731.json"));
 		dicReplyManager.addData(new DicReplyGroup(210341365L, appDirectory + "dic210341365.json"));
 	}
 
-	private void livingCheck() {
+	private void livingCheck()
+	{
 		lCheckV2.addData(new LivingPerson("台长", "https://live.bilibili.com/2409909"));
 		lCheckV2.addData(new LivingPerson("水紫", "https://live.bilibili.com/2803104"));
 		lCheckV2.addData(new LivingPerson("古明地决", "https://live.bilibili.com/952890"));
@@ -636,9 +722,11 @@ public class Autoreply extends JcqAppAbstract implements ICQVer, IMsg, IRequest 
 		lCheckV2.start();
 	}
 
-	private void addRecorder() {
+	private void addRecorder()
+	{
 		List<Group> gs = CQ.getGroupList();
-		for (Iterator i = gs.iterator(); i.hasNext();) {
+		for (Iterator i = gs.iterator(); i.hasNext();)
+		{
 			long gn = ((Group) i.next()).getId();
 			recoderManager.addData(new Recoder(gn));
 		}
